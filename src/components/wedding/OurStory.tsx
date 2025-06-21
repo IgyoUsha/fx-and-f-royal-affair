@@ -88,25 +88,29 @@ const OurStory = () => {
           <p className="text-gray-600">Trusting in God's perfect timing</p>
         </div>
         
-        <div className="relative">
+        <div className="relative px-4">
           <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-gradient-to-b from-teal-500 to-yellow-500"></div>
           
-          <div className="space-y-12">
+          <div className="space-y-8">
             {[
-              { year: "First Met in Russia", desc: "When our paths crossed by God's design", side: "left" },
-              { year: "Growing in Fellowship", desc: "Building our friendship in faith", side: "right" },
-              { year: "Relationship Begins", desc: "Taking the step with God's blessing", side: "left" },
-              { year: "The Proposal", desc: "He asked, she said yes - Praise God!", side: "right" },
-              { year: "Wedding Day", desc: "Our covenant before God begins", side: "left" }
+              { title: "First Met in Russia", desc: "When our paths crossed by God's design", side: "left" },
+              { title: "Growing in Fellowship", desc: "Building our friendship in faith", side: "right" },
+              { title: "Relationship Begins", desc: "Taking the step with God's blessing", side: "left" },
+              { title: "The Proposal", desc: "He asked, she said yes - Praise God!", side: "right" },
+              { title: "Wedding Day", desc: "Our covenant before God begins", side: "left" }
             ].map((milestone, index) => (
-              <div key={index} className={`flex items-center ${milestone.side === 'right' ? 'flex-row-reverse' : ''}`}>
-                <div className={`w-1/2 ${milestone.side === 'right' ? 'text-right pr-8' : 'text-left pl-8'}`}>
-                  <div className="bg-white p-6 rounded-lg shadow-lg border-l-4 border-teal-500">
-                    <h4 className="text-xl font-bold text-gray-800">{milestone.year}</h4>
-                    <p className="text-gray-600">{milestone.desc}</p>
+              <div key={index} className="relative flex items-center">
+                <div className={`w-full flex ${milestone.side === 'right' ? 'justify-end' : 'justify-start'}`}>
+                  <div className={`w-full max-w-sm ${milestone.side === 'right' ? 'ml-auto pl-8' : 'mr-auto pr-8'}`}>
+                    <Card className="bg-white shadow-lg border-l-4 border-teal-500 hover:shadow-xl transition-shadow">
+                      <CardContent className="p-4">
+                        <h4 className="text-lg font-bold text-gray-800 mb-2">{milestone.title}</h4>
+                        <p className="text-gray-600 text-sm">{milestone.desc}</p>
+                      </CardContent>
+                    </Card>
                   </div>
                 </div>
-                <div className="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-teal-500 rounded-full border-4 border-white shadow-lg"></div>
+                <div className="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-teal-500 rounded-full border-4 border-white shadow-lg z-10"></div>
               </div>
             ))}
           </div>

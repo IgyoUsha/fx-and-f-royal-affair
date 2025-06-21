@@ -6,11 +6,11 @@ import { Button } from "@/components/ui/button";
 const HeroSection = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   
-  // Placeholder images - replace with actual uploaded images
+  // Using your uploaded image
   const heroImages = [
-    "https://images.unsplash.com/photo-1606216794074-735e91aa2c92?w=800&h=600&fit=crop",
-    "https://images.unsplash.com/photo-1519741497674-611481863552?w=800&h=600&fit=crop",
-    "https://images.unsplash.com/photo-1537633552985-df8429e8048b?w=800&h=600&fit=crop"
+    "/lovable-uploads/378692a0-cac6-4492-a459-234ea4307213.png",
+    "/lovable-uploads/378692a0-cac6-4492-a459-234ea4307213.png",
+    "/lovable-uploads/378692a0-cac6-4492-a459-234ea4307213.png"
   ];
 
   useEffect(() => {
