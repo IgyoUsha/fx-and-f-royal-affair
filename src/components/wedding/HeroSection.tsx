@@ -6,11 +6,11 @@ import { Button } from "@/components/ui/button";
 const HeroSection = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   
-  // Using your uploaded image
+  // Using your uploaded images
   const heroImages = [
-    "/lovable-uploads/378692a0-cac6-4492-a459-234ea4307213.png",
-    "/lovable-uploads/378692a0-cac6-4492-a459-234ea4307213.png",
-    "/lovable-uploads/378692a0-cac6-4492-a459-234ea4307213.png"
+    "/lovable-uploads/028acff6-84b7-448a-be26-7887fbee9497.png",
+    "/lovable-uploads/4fdca408-24b8-4ef7-9838-b2698afb6fd3.png",
+    "/lovable-uploads/f2376d1c-9a64-4d79-8aca-db6041a7acdf.png"
   ];
 
   useEffect(() => {
@@ -41,7 +41,7 @@ const HeroSection = () => {
           >
             <img
               src={image}
-              alt={`Couple photo ${index + 1}`}
+              alt={`Fater and Fxentso photo ${index + 1}`}
               className="w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-black/50"></div>

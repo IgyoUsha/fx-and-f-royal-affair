@@ -41,7 +41,7 @@ const Index = () => {
       <nav className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-b border-teal-100">
         <div className="container mx-auto px-4 py-3">
           <div className="flex justify-between items-center">
-            <div className="text-2xl font-bold text-teal-600">Fx & F</div>
+            <div className="text-2xl font-bold text-teal-600 font-playfair">Fx & F</div>
             
             {/* Desktop Navigation */}
             <div className="hidden md:flex space-x-6">
@@ -66,7 +66,7 @@ const Index = () => {
               <SheetContent side="right" className="w-64 bg-white/95 backdrop-blur-md">
                 <div className="flex flex-col space-y-6 mt-8">
                   <div className="text-center">
-                    <div className="text-2xl font-bold text-teal-600 mb-2">Fx & F</div>
+                    <div className="text-2xl font-bold text-teal-600 mb-2 font-playfair">Fx & F</div>
                     <p className="text-gray-600 text-sm">A Royal Affair</p>
                   </div>
                   <div className="flex flex-col space-y-4">
