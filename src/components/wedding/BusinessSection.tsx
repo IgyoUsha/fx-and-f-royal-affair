@@ -31,28 +31,28 @@ const BusinessSection = () => {
             <h3 className="text-3xl font-bold text-gray-800 mb-4">Guidetryb</h3>
             
             <p className="text-gray-600 text-lg leading-relaxed mb-6">
-              Your trusted guide to discovering amazing experiences and destinations. 
-              We help people explore the world with confidence and create unforgettable memories.
+              An online career mentorship platform connecting ambitious professionals with experienced mentors. 
+              We help people navigate their career journey and achieve their professional goals through personalized guidance.
             </p>
             
             <div className="space-y-3 mb-8">
               <div className="flex items-center justify-center space-x-2 text-blue-600">
                 <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
-                <span>Travel & Experience Platform</span>
+                <span>Career Mentorship Platform</span>
               </div>
               <div className="flex items-center justify-center space-x-2 text-blue-600">
                 <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
-                <span>Curated Recommendations</span>
+                <span>Professional Development</span>
               </div>
               <div className="flex items-center justify-center space-x-2 text-blue-600">
                 <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
-                <span>Community-Driven Reviews</span>
+                <span>One-on-One Mentoring</span>
               </div>
             </div>
 
             <Button 
               className="bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white px-6 py-3 rounded-full shadow-lg hover:shadow-xl transition-all transform hover:scale-105"
-              onClick={() => window.open('#', '_blank')}
+              onClick={() => window.open('https://guidetryb.com/', '_blank')}
             >
               Visit Guidetryb
               <ExternalLink className="ml-2" size={16} />
@@ -70,28 +70,28 @@ const BusinessSection = () => {
             <h3 className="text-3xl font-bold text-gray-800 mb-4">Abba's Dwelling</h3>
             
             <p className="text-gray-600 text-lg leading-relaxed mb-6">
-              Creating beautiful, spiritual spaces for worship and community gathering. 
-              We design and build places where faith comes alive and communities flourish.
+              A Christian blog dedicated to inspiring and encouraging young people in their faith journey. 
+              We share biblical insights, testimonies, and practical wisdom to help youth grow closer to God.
             </p>
             
             <div className="space-y-3 mb-8">
               <div className="flex items-center justify-center space-x-2 text-green-600">
                 <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                <span>Spiritual Architecture</span>
+                <span>Christian Blog for Youth</span>
               </div>
               <div className="flex items-center justify-center space-x-2 text-green-600">
                 <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                <span>Community Spaces</span>
+                <span>Biblical Insights & Wisdom</span>
               </div>
               <div className="flex items-center justify-center space-x-2 text-green-600">
                 <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                <span>Sacred Design</span>
+                <span>Faith-Building Content</span>
               </div>
             </div>
 
             <Button 
               className="bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white px-6 py-3 rounded-full shadow-lg hover:shadow-xl transition-all transform hover:scale-105"
-              onClick={() => window.open('#', '_blank')}
+              onClick={() => window.open('https://abbasdwelling.com/', '_blank')}
             >
               Visit Abba's Dwelling
               <ExternalLink className="ml-2" size={16} />
