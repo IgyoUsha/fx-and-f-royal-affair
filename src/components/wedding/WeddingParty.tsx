@@ -1,4 +1,3 @@
-
 import { Crown, Heart } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 
@@ -121,7 +120,7 @@ const WeddingParty = () => {
               place in our hearts, and we're honored to have them stand with us on our wedding day.
             </p>
           </CardContent>
-        </Car>
+        </Card>
       </div>
     </div>
   );
