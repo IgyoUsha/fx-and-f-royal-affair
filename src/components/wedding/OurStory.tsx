@@ -15,7 +15,7 @@ const OurStory = () => {
           <div className="h-px bg-gradient-to-r from-transparent via-teal-500 to-transparent flex-1 max-w-32"></div>
         </div>
         <p className="text-gray-600 text-lg max-w-2xl mx-auto">
-          Every love story is beautiful, but ours is our favorite. Here's how it all began...
+          From Nigeria to Russia, and back to forever. Here's how God wrote our beautiful love story...
         </p>
       </div>
 
@@ -34,16 +34,17 @@ const OurStory = () => {
             <Quote className="text-teal-300 mb-4" size={32} />
             <div className="text-gray-700 leading-relaxed space-y-4">
               <p>
-                The first time I saw Fxentso, I knew she was special. There was something about her smile 
-                that lit up the entire room, and her laugh was like music to my ears.
+                Thousands of miles away from home in Russia, I never expected to find the love of my life. 
+                But when I met Fxentso, I knew God had orchestrated something beautiful. Her radiant smile 
+                and gentle spirit captured my heart from the very beginning.
               </p>
               <p>
-                What started as friendship quickly blossomed into something deeper. Her kindness, 
-                intelligence, and the way she sees the world made me realize I wanted to spend 
-                the rest of my life making her happy.
+                What amazed me most was how she carried herself with such grace and wisdom. Being away from 
+                Nigeria, finding someone who shared my values and faith felt like a miracle. She didn't 
+                just complete me; she made me want to be a better man.
               </p>
               <p className="italic text-teal-700 font-medium">
-                "She didn't just steal my heart; she made it her home."
+                "In a foreign land, God gave me my home in her."
               </p>
             </div>
           </CardContent>
@@ -63,17 +64,17 @@ const OurStory = () => {
             <Quote className="text-yellow-300 mb-4" size={32} />
             <div className="text-gray-700 leading-relaxed space-y-4">
               <p>
-                Meeting Fater changed everything for me. He has this incredible way of making 
-                everyone around him feel valued and loved. His sense of humor and gentle spirit 
-                drew me in from the very beginning.
+                Being far from home in Russia was challenging, but meeting Fater changed everything. 
+                There was something different about him - his genuine heart, his love for God, and 
+                the way he treated everyone with such kindness and respect.
               </p>
               <p>
-                What I love most about him is his unwavering support and the way he believes in 
-                my dreams even when I doubt myself. He's not just my partner; he's my best friend 
-                and my biggest cheerleader.
+                What drew me to him wasn't just his charm, but his unwavering faith and the way he 
+                encouraged me to chase my dreams. Even across continents, he made me feel at home. 
+                I knew God had answered my prayers for a godly man who would love and cherish me.
               </p>
               <p className="italic text-yellow-700 font-medium">
-                "With him, I found not just love, but my forever home."
+                "In him, I found God's perfect plan for my life."
               </p>
             </div>
           </CardContent>
@@ -84,6 +85,7 @@ const OurStory = () => {
       <div className="mt-16 max-w-4xl mx-auto">
         <div className="text-center mb-8">
           <h3 className="text-3xl font-bold text-gray-800 mb-4">Our Journey Together</h3>
+          <p className="text-gray-600">Trusting in God's perfect timing</p>
         </div>
         
         <div className="relative">
@@ -91,11 +93,11 @@ const OurStory = () => {
           
           <div className="space-y-12">
             {[
-              { year: "First Met", desc: "When our paths first crossed", side: "left" },
-              { year: "First Date", desc: "The beginning of our adventure", side: "right" },
-              { year: "Relationship", desc: "Making it official", side: "left" },
-              { year: "Engagement", desc: "He asked, she said yes!", side: "right" },
-              { year: "Wedding Day", desc: "Our happily ever after begins", side: "left" }
+              { year: "First Met in Russia", desc: "When our paths crossed by God's design", side: "left" },
+              { year: "Growing in Fellowship", desc: "Building our friendship in faith", side: "right" },
+              { year: "Relationship Begins", desc: "Taking the step with God's blessing", side: "left" },
+              { year: "The Proposal", desc: "He asked, she said yes - Praise God!", side: "right" },
+              { year: "Wedding Day", desc: "Our covenant before God begins", side: "left" }
             ].map((milestone, index) => (
               <div key={index} className={`flex items-center ${milestone.side === 'right' ? 'flex-row-reverse' : ''}`}>
                 <div className={`w-1/2 ${milestone.side === 'right' ? 'text-right pr-8' : 'text-left pl-8'}`}>

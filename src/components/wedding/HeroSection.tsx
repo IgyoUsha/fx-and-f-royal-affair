@@ -89,8 +89,8 @@ const HeroSection = () => {
           </p>
           
           <div className="text-lg md:text-xl mb-8">
-            <p className="mb-2">📅 [Wedding Date]</p>
-            <p>📍 [Wedding Venue]</p>
+            <p className="mb-2">📅 Saturday, August 16th, 2025</p>
+            <p>📍 Makurdi, Nigeria</p>
           </div>
 
           <Button 

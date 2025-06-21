@@ -4,19 +4,19 @@ import { Card, CardContent } from "@/components/ui/card";
 
 const WeddingParty = () => {
   const groomsmen = [
-    { name: "Isaac", role: "Groomsman" },
+    { name: "Isaac", role: "Best Man", isBest: true },
     { name: "Martin-Luther", role: "Groomsman" },
     { name: "Joshua", role: "Groomsman" },
     { name: "Ife", role: "Groomsman" },
     { name: "Usha", role: "Groomsman" },
-    { name: "JM", role: "Best Man", isBest: true }
+    { name: "JM", role: "Groomsman" }
   ];
 
   const bridesmaids = [
-    { name: "Setemi", role: "Bridesmaid" },
+    { name: "Setemi", role: "Chief Bridesmaid", isBest: true },
     { name: "Iwuese", role: "Bridesmaid" },
     { name: "Kwaghdoobee", role: "Bridesmaid" },
-    { name: "Bella", role: "Chief Bridesmaid", isBest: true }
+    { name: "Bella", role: "Bridesmaid" }
   ];
 
   return (
@@ -121,7 +121,7 @@ const WeddingParty = () => {
               place in our hearts, and we're honored to have them stand with us on our wedding day.
             </p>
           </CardContent>
-        </Card>
+        </Car>
       </div>
     </div>
   );

@@ -26,9 +26,9 @@ const Testimonials = () => {
             <div className="text-center mb-6">
               <Crown className="text-teal-600 mx-auto mb-4" size={32} />
               <div className="w-20 h-20 mx-auto mb-4 rounded-full bg-gradient-to-br from-teal-500 to-teal-600 flex items-center justify-center">
-                <span className="text-white text-2xl font-bold">JM</span>
+                <span className="text-white text-2xl font-bold">I</span>
               </div>
-              <h3 className="text-2xl font-bold text-gray-800">JM</h3>
+              <h3 className="text-2xl font-bold text-gray-800">Isaac</h3>
               <p className="text-teal-600 font-semibold">Best Man</p>
             </div>
             
@@ -36,15 +36,16 @@ const Testimonials = () => {
             <div className="text-gray-700 leading-relaxed space-y-4">
               <p>
                 I've known Fater for years, and I've never seen him as happy as he is with Fxentso. 
-                She brings out the best in him, and their love is truly inspiring to witness.
+                She brings out the best in him, and their love is truly inspiring to witness. What I 
+                admire most is how their relationship is built on a foundation of faith and mutual respect.
               </p>
               <p>
                 Watching their relationship grow has been like watching a beautiful story unfold. 
                 They complement each other perfectly - where one is strong, the other is supportive, 
-                and together they're unstoppable.
+                and together they're unstoppable. Their love for God shines through everything they do.
               </p>
               <p className="italic text-teal-700 font-medium text-lg">
-                "Fater and Fxentso, your love story gives us all hope. Here's to your happily ever after!"
+                "Fater and Fxentso, your love story gives us all hope. May God continue to bless your union!"
               </p>
             </div>
             
@@ -62,9 +63,9 @@ const Testimonials = () => {
             <div className="text-center mb-6">
               <Crown className="text-yellow-600 mx-auto mb-4" size={32} />
               <div className="w-20 h-20 mx-auto mb-4 rounded-full bg-gradient-to-br from-yellow-400 to-yellow-500 flex items-center justify-center">
-                <span className="text-white text-2xl font-bold">B</span>
+                <span className="text-white text-2xl font-bold">S</span>
               </div>
-              <h3 className="text-2xl font-bold text-gray-800">Bella</h3>
+              <h3 className="text-2xl font-bold text-gray-800">Setemi</h3>
               <p className="text-yellow-600 font-semibold">Chief Bridesmaid</p>
             </div>
             
@@ -73,21 +74,21 @@ const Testimonials = () => {
               <p>
                 Fxentso has always been someone special, but since meeting Fater, she's been absolutely 
                 radiant. The way they look at each other, support each other, and laugh together 
-                shows a love that's meant to last forever.
+                shows a love that's rooted in faith and meant to last forever.
               </p>
               <p>
                 As her closest friend, I've had a front-row seat to their beautiful love story. 
-                From their first date stories to watching Fater propose, every moment has been 
-                filled with pure joy and genuine connection.
+                From their first meeting stories to watching their relationship blossom in God's timing, 
+                every moment has been filled with pure joy and genuine connection.
               </p>
               <p className="italic text-yellow-700 font-medium text-lg">
-                "Fxentso and Fater, you two are perfect together. May your marriage be everything you've dreamed of and more!"
+                "Fxentso and Fater, you two are perfect together. May your marriage be blessed and filled with God's love!"
               </p>
             </div>
             
             <div className="mt-6 pt-4 border-t border-yellow-200">
               <p className="text-sm text-gray-500 text-center">
-                With all my love and best wishes for your future
+                With all my love and prayers for your future
               </p>
             </div>
           </CardContent>
@@ -100,9 +101,9 @@ const Testimonials = () => {
           <CardContent className="p-8">
             <Quote className="text-rose-400 mx-auto mb-6" size={48} />
             <blockquote className="text-2xl md:text-3xl font-light text-gray-700 italic mb-6 leading-relaxed">
-              "A successful marriage requires falling in love many times, always with the same person."
+              "He who finds a wife finds what is good and receives favor from the Lord."
             </blockquote>
-            <p className="text-gray-500 font-medium">- Mignon McLaughlin</p>
+            <p className="text-gray-500 font-medium">- Proverbs 18:22</p>
             <div className="mt-6 flex justify-center space-x-2">
               <Heart className="text-rose-400" size={20} />
               <Heart className="text-rose-400" size={20} />

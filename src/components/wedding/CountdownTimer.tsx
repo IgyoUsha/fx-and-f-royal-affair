@@ -1,10 +1,10 @@
 
 import { useState, useEffect } from "react";
-import { Clock, Calendar, Heart } from "lucide-react";
+import { Clock, Calendar, Heart, MapPin } from "lucide-react";
 
 const CountdownTimer = () => {
-  // Set your wedding date here
-  const weddingDate = new Date("2024-12-31T15:00:00"); // Example date
+  // Wedding date - August 16th, 2025
+  const weddingDate = new Date("2025-08-16T15:00:00");
   
   const [timeLeft, setTimeLeft] = useState({
     days: 0,
@@ -60,16 +60,17 @@ const CountdownTimer = () => {
           ))}
         </div>
         
-        <div className="mt-8">
+        <div className="mt-8 space-y-4">
           <div className="flex items-center justify-center space-x-4 text-lg">
             <Calendar className="text-teal-200" size={20} />
             <span className="text-teal-100">
-              {weddingDate.toLocaleDateString('en-US', { 
-                weekday: 'long', 
-                year: 'numeric', 
-                month: 'long', 
-                day: 'numeric' 
-              })}
+              Saturday, August 16th, 2025
+            </span>
+          </div>
+          <div className="flex items-center justify-center space-x-4 text-lg">
+            <MapPin className="text-teal-200" size={20} />
+            <span className="text-teal-100">
+              Makurdi, Nigeria
             </span>
           </div>
         </div>
