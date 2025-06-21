@@ -1,0 +1,123 @@
+
+import { useState, useEffect } from "react";
+import { ChevronLeft, ChevronRight, Heart, Crown } from "lucide-react";
+import { Button } from "@/components/ui/button";
+
+const HeroSection = () => {
+  const [currentSlide, setCurrentSlide] = useState(0);
+  
+  // Placeholder images - replace with actual uploaded images
+  const heroImages = [
+    "https://images.unsplash.com/photo-1606216794074-735e91aa2c92?w=800&h=600&fit=crop",
+    "https://images.unsplash.com/photo-1519741497674-611481863552?w=800&h=600&fit=crop",
+    "https://images.unsplash.com/photo-1537633552985-df8429e8048b?w=800&h=600&fit=crop"
+  ];
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % heroImages.length);
+    }, 4000);
+    return () => clearInterval(timer);
+  }, [heroImages.length]);
+
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev + 1) % heroImages.length);
+  };
+
+  const prevSlide = () => {
+    setCurrentSlide((prev) => (prev - 1 + heroImages.length) % heroImages.length);
+  };
+
+  return (
+    <div className="relative h-screen overflow-hidden">
+      {/* Background Slideshow */}
+      <div className="absolute inset-0">
+        {heroImages.map((image, index) => (
+          <div
+            key={index}
+            className={`absolute inset-0 transition-opacity duration-1000 ${
+              index === currentSlide ? "opacity-100" : "opacity-0"
+            }`}
+          >
+            <img
+              src={image}
+              alt={`Couple photo ${index + 1}`}
+              className="w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-black/50"></div>
+          </div>
+        ))}
+      </div>
+
+      {/* Navigation Arrows */}
+      <button
+        onClick={prevSlide}
+        className="absolute left-4 top-1/2 transform -translate-y-1/2 z-10 bg-white/20 backdrop-blur-sm p-2 rounded-full hover:bg-white/30 transition-all"
+      >
+        <ChevronLeft className="text-white" size={24} />
+      </button>
+      <button
+        onClick={nextSlide}
+        className="absolute right-4 top-1/2 transform -translate-y-1/2 z-10 bg-white/20 backdrop-blur-sm p-2 rounded-full hover:bg-white/30 transition-all"
+      >
+        <ChevronRight className="text-white" size={24} />
+      </button>
+
+      {/* Hero Content */}
+      <div className="relative z-10 flex items-center justify-center h-full text-center text-white px-4">
+        <div className="max-w-4xl animate-fade-in">
+          {/* Royal Crown */}
+          <div className="flex justify-center mb-6">
+            <Crown className="text-yellow-400" size={48} />
+          </div>
+          
+          <h1 className="text-4xl md:text-7xl font-bold mb-4 bg-gradient-to-r from-yellow-400 via-white to-teal-300 bg-clip-text text-transparent">
+            Fater & Fxentso
+          </h1>
+          
+          <div className="flex items-center justify-center space-x-4 mb-6">
+            <div className="h-px bg-gradient-to-r from-transparent via-white to-transparent flex-1 max-w-32"></div>
+            <Heart className="text-teal-300" size={24} />
+            <div className="h-px bg-gradient-to-r from-transparent via-white to-transparent flex-1 max-w-32"></div>
+          </div>
+          
+          <p className="text-xl md:text-2xl mb-2 font-light">
+            A Royal Affair
+          </p>
+          <p className="text-lg md:text-xl mb-8 text-teal-200">
+            Two hearts, one crown, forever bound
+          </p>
+          
+          <div className="text-lg md:text-xl mb-8">
+            <p className="mb-2">📅 [Wedding Date]</p>
+            <p>📍 [Wedding Venue]</p>
+          </div>
+
+          <Button 
+            size="lg" 
+            className="bg-gradient-to-r from-teal-500 to-teal-600 hover:from-teal-600 hover:to-teal-700 text-white px-8 py-3 text-lg font-semibold rounded-full shadow-lg hover:shadow-xl transition-all transform hover:scale-105"
+          >
+            Join Our Celebration
+          </Button>
+        </div>
+      </div>
+
+      {/* Slide Indicators */}
+      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-2 z-10">
+        {heroImages.map((_, index) => (
+          <button
+            key={index}
+            onClick={() => setCurrentSlide(index)}
+            className={`w-3 h-3 rounded-full transition-all ${
+              index === currentSlide 
+                ? "bg-white scale-125" 
+                : "bg-white/50 hover:bg-white/75"
+            }`}
+          />
+        ))}
+      </div>
+    </div>
+  );
+};
+
+export default HeroSection;
