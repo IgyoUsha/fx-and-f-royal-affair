@@ -44,7 +44,8 @@ const HeroSection = () => {
               alt={`Fater and Fxentso photo ${index + 1}`}
               className="w-full h-full object-cover"
             />
-            <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-black/50"></div>
+            {/* Stronger overlay for better text legibility */}
+            <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/70"></div>
           </div>
         ))}
       </div>

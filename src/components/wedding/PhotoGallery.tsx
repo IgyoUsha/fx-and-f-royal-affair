@@ -7,17 +7,48 @@ import { Button } from "@/components/ui/button";
 const PhotoGallery = () => {
   const [selectedPhoto, setSelectedPhoto] = useState<number | null>(null);
   
-  // Placeholder images - replace with actual uploaded couple photos
+  // Your beautiful couple photos
   const galleryPhotos = [
-    { src: "https://images.unsplash.com/photo-1606216794074-735e91aa2c92?w=600&h=400&fit=crop", caption: "Our first adventure together" },
-    { src: "https://images.unsplash.com/photo-1519741497674-611481863552?w=600&h=400&fit=crop", caption: "Date night memories" },
-    { src: "https://images.unsplash.com/photo-1537633552985-df8429e8048b?w=600&h=400&fit=crop", caption: "Celebrating milestones" },
-    { src: "https://images.unsplash.com/photo-1521572267360-ee0c2909d518?w=600&h=400&fit=crop", caption: "Weekend getaway" },
-    { src: "https://images.unsplash.com/photo-1606216928421-b5b99c4c4c6a?w=600&h=400&fit=crop", caption: "Holiday celebrations" },
-    { src: "https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=600&h=400&fit=crop", caption: "Making memories" },
-    { src: "https://images.unsplash.com/photo-1522673607200-164d1b6ce486?w=600&h=400&fit=crop", caption: "Adventures together" },
-    { src: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=400&fit=crop", caption: "Special moments" },
-    { src: "https://images.unsplash.com/photo-1609902726285-00668009f004?w=600&h=400&fit=crop", caption: "Love in the details" }
+    { 
+      src: "/lovable-uploads/7428e189-476c-4167-a9e8-b376326d667b.png", 
+      caption: "Our first adventure together" 
+    },
+    { 
+      src: "/lovable-uploads/3b318e8c-27c4-46ea-ab9f-998b948e01fe.png", 
+      caption: "Making memories in London" 
+    },
+    { 
+      src: "/lovable-uploads/3f91bb3c-6815-468f-adea-84b91542b99d.png", 
+      caption: "Sunny days together" 
+    },
+    { 
+      src: "/lovable-uploads/8e6a5fc6-49cf-4d82-b4b4-4b2ca166e816.png", 
+      caption: "Dressed up for special occasions" 
+    },
+    { 
+      src: "/lovable-uploads/cad4c87c-b6b0-4b90-8951-9c5fe746586f.png", 
+      caption: "Fun times in the city" 
+    },
+    { 
+      src: "/lovable-uploads/5f9030ff-433a-4278-bb84-7b5b7bb62ef3.png", 
+      caption: "The proposal moment" 
+    },
+    { 
+      src: "/lovable-uploads/ae85b854-5e3f-4c22-8938-7ba924b5272b.png", 
+      caption: "Tender moments together" 
+    },
+    { 
+      src: "/lovable-uploads/b3034109-f892-4e1b-8b43-77f2de6ac8a2.png", 
+      caption: "Love in black and white" 
+    },
+    { 
+      src: "/lovable-uploads/ca484c7e-dcfd-4dea-9241-f7de04b6cf92.png", 
+      caption: "Our engagement celebration" 
+    },
+    { 
+      src: "/lovable-uploads/d9a8a524-8fee-48a9-b498-277048fbb28c.png", 
+      caption: "Royal celebration moments" 
+    }
   ];
 
   const openModal = (index: number) => {
