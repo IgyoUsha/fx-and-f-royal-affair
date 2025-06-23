@@ -32,8 +32,18 @@ const Index = () => {
     { label: "Our Story", id: "story" },
     { label: "Wedding Party", id: "party" },
     { label: "Gallery", id: "gallery" },
-    { label: "RSVP", id: "rsvp" }
+    { label: "RSVP", id: "rsvp" },
+    { label: "Guidetryb", url: "https://guidetryb.com/" },
+    { label: "Abba's Dwelling", url: "https://abbasdwelling.com/" }
   ];
+
+  const handleNavigation = (item: any) => {
+    if (item.url) {
+      window.open(item.url, '_blank');
+    } else {
+      scrollToSection(item.id);
+    }
+  };
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-white via-teal-50 to-white">
@@ -41,17 +51,25 @@ const Index = () => {
       <nav className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-b border-teal-100">
         <div className="container mx-auto px-4 py-3">
           <div className="flex justify-between items-center">
-            <div className="text-2xl font-bold text-teal-600 font-playfair">Fx & F</div>
+            <div className="flex items-center space-x-3">
+              <img 
+                src="/lovable-uploads/f03016c7-1189-4490-b9f6-50f6d5fde1b5.png" 
+                alt="F&F Logo" 
+                className="h-8 w-auto"
+              />
+              <div className="text-2xl font-bold text-teal-600 font-playfair">Fx & F</div>
+            </div>
             
             {/* Desktop Navigation */}
             <div className="hidden md:flex space-x-6">
               {navigationItems.map((item) => (
                 <button 
-                  key={item.id}
-                  onClick={() => scrollToSection(item.id)} 
-                  className="text-gray-700 hover:text-teal-600 transition-colors"
+                  key={item.label}
+                  onClick={() => handleNavigation(item)} 
+                  className="text-gray-700 hover:text-teal-600 transition-colors flex items-center space-x-1"
                 >
-                  {item.label}
+                  <span>{item.label}</span>
+                  {item.url && <ExternalLink size={14} />}
                 </button>
               ))}
             </div>
@@ -66,17 +84,25 @@ const Index = () => {
               <SheetContent side="right" className="w-64 bg-white/95 backdrop-blur-md">
                 <div className="flex flex-col space-y-6 mt-8">
                   <div className="text-center">
-                    <div className="text-2xl font-bold text-teal-600 mb-2 font-playfair">Fx & F</div>
+                    <div className="flex items-center justify-center space-x-2 mb-2">
+                      <img 
+                        src="/lovable-uploads/f03016c7-1189-4490-b9f6-50f6d5fde1b5.png" 
+                        alt="F&F Logo" 
+                        className="h-6 w-auto"
+                      />
+                      <div className="text-2xl font-bold text-teal-600 font-playfair">Fx & F</div>
+                    </div>
                     <p className="text-gray-600 text-sm">A Royal Affair</p>
                   </div>
                   <div className="flex flex-col space-y-4">
                     {navigationItems.map((item) => (
                       <button 
-                        key={item.id}
-                        onClick={() => scrollToSection(item.id)} 
-                        className="text-left text-gray-700 hover:text-teal-600 transition-colors py-2 px-4 rounded-lg hover:bg-teal-50"
+                        key={item.label}
+                        onClick={() => handleNavigation(item)} 
+                        className="text-left text-gray-700 hover:text-teal-600 transition-colors py-2 px-4 rounded-lg hover:bg-teal-50 flex items-center justify-between"
                       >
-                        {item.label}
+                        <span>{item.label}</span>
+                        {item.url && <ExternalLink size={14} />}
                       </button>
                     ))}
                   </div>
@@ -140,7 +166,7 @@ const Index = () => {
             <span className="text-2xl font-bold">Fx & F</span>
             <Heart className="text-teal-400" size={24} />
           </div>
-          <p className="text-gray-400">Fater & Fxentso • A Royal Affair</p>
+          <p className="text-gray-400">Fxentso & Fater • A Royal Affair</p>
           <p className="text-gray-500 mt-2">Made with love for our special day</p>
         </div>
       </footer>

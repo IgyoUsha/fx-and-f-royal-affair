@@ -41,7 +41,7 @@ const HeroSection = () => {
           >
             <img
               src={image}
-              alt={`Fater and Fxentso photo ${index + 1}`}
+              alt={`Fxentso and Fater photo ${index + 1}`}
               className="w-full h-full object-cover"
             />
             {/* Stronger overlay for better text legibility */}
@@ -73,7 +73,7 @@ const HeroSection = () => {
           </div>
           
           <h1 className="text-4xl md:text-7xl font-bold mb-4 bg-gradient-to-r from-yellow-400 via-white to-teal-300 bg-clip-text text-transparent">
-            Fater & Fxentso
+            Fxentso & Fater
           </h1>
           
           <div className="flex items-center justify-center space-x-4 mb-6">

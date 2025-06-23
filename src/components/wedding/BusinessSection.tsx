@@ -16,7 +16,7 @@ const BusinessSection = () => {
           <div className="h-px bg-gradient-to-r from-transparent via-purple-500 to-transparent flex-1 max-w-32"></div>
         </div>
         <p className="text-gray-600 text-lg max-w-2xl mx-auto">
-          Beyond our love story, we're also business partners building something amazing together
+          Beyond our love story, we're part of amazing teams building something impactful together
         </p>
       </div>
 
@@ -32,7 +32,7 @@ const BusinessSection = () => {
             
             <p className="text-gray-600 text-lg leading-relaxed mb-6">
               An online career mentorship platform connecting ambitious professionals with experienced mentors. 
-              We help people navigate their career journey and achieve their professional goals through personalized guidance.
+              We're part of a dedicated team helping people navigate their career journey and achieve their professional goals through personalized guidance.
             </p>
             
             <div className="space-y-3 mb-8">
@@ -71,7 +71,7 @@ const BusinessSection = () => {
             
             <p className="text-gray-600 text-lg leading-relaxed mb-6">
               A Christian blog dedicated to inspiring and encouraging young people in their faith journey. 
-              We share biblical insights, testimonies, and practical wisdom to help youth grow closer to God.
+              We collaborate with a passionate team to share biblical insights, testimonies, and practical wisdom to help youth grow closer to God.
             </p>
             
             <div className="space-y-3 mb-8">
@@ -111,9 +111,9 @@ const BusinessSection = () => {
             <h3 className="text-2xl font-bold text-gray-800 mb-4">Partners in Love & Business</h3>
             <p className="text-gray-600 text-lg leading-relaxed">
               Just as we've found our perfect match in each other, we've also discovered the joy of 
-              building businesses together. Our ventures reflect our shared values, dreams, and 
+              being part of amazing teams building impactful ventures. Our involvement in these businesses reflects our shared values, dreams, and 
               commitment to making a positive impact in the world. Thank you for supporting our 
-              journey both in love and in business!
+              journey both in love and in our professional endeavors!
             </p>
           </CardContent>
         </Card>
