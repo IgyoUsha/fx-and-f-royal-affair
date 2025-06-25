@@ -1,6 +1,6 @@
 
 import { useState, useEffect } from "react";
-import { ChevronDown, Heart, Camera, Upload, ExternalLink, Menu, X } from "lucide-react";
+import { ChevronDown, Heart, Camera, Upload, ExternalLink, Menu, X, Settings } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
@@ -14,10 +14,14 @@ import BusinessSection from "@/components/wedding/BusinessSection";
 import PhotoUpload from "@/components/wedding/PhotoUpload";
 import CountdownTimer from "@/components/wedding/CountdownTimer";
 import RSVP from "@/components/wedding/RSVP";
+import AdminLogin from "@/components/admin/AdminLogin";
+import AdminDashboard from "@/components/admin/AdminDashboard";
 
 const Index = () => {
   const [currentSection, setCurrentSection] = useState(0);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [showAdminLogin, setShowAdminLogin] = useState(false);
+  const [isAdminLoggedIn, setIsAdminLoggedIn] = useState(false);
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
@@ -44,6 +48,20 @@ const Index = () => {
       scrollToSection(item.id);
     }
   };
+
+  const handleAdminLogin = () => {
+    setIsAdminLoggedIn(true);
+    setShowAdminLogin(false);
+  };
+
+  const handleAdminLogout = () => {
+    setIsAdminLoggedIn(false);
+  };
+
+  // If admin is logged in, show admin dashboard
+  if (isAdminLoggedIn) {
+    return <AdminDashboard onLogout={handleAdminLogout} />;
+  }
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-white via-teal-50 to-white">
@@ -168,8 +186,29 @@ const Index = () => {
           </div>
           <p className="text-gray-400">Fxentso & Fater • A Royal Affair</p>
           <p className="text-gray-500 mt-2">Made with love for our special day</p>
+          
+          {/* Admin Login Button */}
+          <div className="mt-6">
+            <Button
+              onClick={() => setShowAdminLogin(true)}
+              variant="ghost"
+              size="sm"
+              className="text-gray-500 hover:text-gray-300 flex items-center space-x-2 mx-auto"
+            >
+              <Settings className="w-4 h-4" />
+              <span>Admin</span>
+            </Button>
+          </div>
         </div>
       </footer>
+
+      {/* Admin Login Modal */}
+      {showAdminLogin && (
+        <AdminLogin
+          onLogin={handleAdminLogin}
+          onClose={() => setShowAdminLogin(false)}
+        />
+      )}
     </div>
   );
 };
