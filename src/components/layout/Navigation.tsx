@@ -36,13 +36,12 @@ const Navigation = ({ onNavigate }: NavigationProps) => {
     <nav className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-b border-teal-100">
       <div className="container mx-auto px-4 py-3">
         <div className="flex justify-between items-center">
-          <div className="flex items-center space-x-3">
+          <div className="flex items-center">
             <img 
-              src="/lovable-uploads/f03016c7-1189-4490-b9f6-50f6d5fde1b5.png" 
-              alt="F&F Logo" 
-              className="h-8 w-auto"
+              src="/lovable-uploads/854e4e21-3cd0-4bb5-8d77-be18fd390b65.png" 
+              alt="F&F Wedding Logo" 
+              className="h-12 w-auto"
             />
-            <div className="text-2xl font-bold text-teal-600 font-playfair">Fx & F</div>
           </div>
           
           {/* Desktop Navigation */}
@@ -69,13 +68,12 @@ const Navigation = ({ onNavigate }: NavigationProps) => {
             <SheetContent side="right" className="w-64 bg-white/95 backdrop-blur-md">
               <div className="flex flex-col space-y-6 mt-8">
                 <div className="text-center">
-                  <div className="flex items-center justify-center space-x-2 mb-2">
+                  <div className="flex items-center justify-center mb-2">
                     <img 
-                      src="/lovable-uploads/f03016c7-1189-4490-b9f6-50f6d5fde1b5.png" 
-                      alt="F&F Logo" 
-                      className="h-6 w-auto"
+                      src="/lovable-uploads/854e4e21-3cd0-4bb5-8d77-be18fd390b65.png" 
+                      alt="F&F Wedding Logo" 
+                      className="h-10 w-auto"
                     />
-                    <div className="text-2xl font-bold text-teal-600 font-playfair">Fx & F</div>
                   </div>
                   <p className="text-gray-600 text-sm">A Royal Affair</p>
                 </div>
