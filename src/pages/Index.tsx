@@ -16,10 +16,10 @@ import CountdownTimer from "@/components/wedding/CountdownTimer";
 import RSVP from "@/components/wedding/RSVP";
 import AdminLogin from "@/components/admin/AdminLogin";
 import AdminDashboard from "@/components/admin/AdminDashboard";
+import Navigation from "@/components/layout/Navigation";
+import Footer from "@/components/layout/Footer";
 
 const Index = () => {
-  const [currentSection, setCurrentSection] = useState(0);
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [showAdminLogin, setShowAdminLogin] = useState(false);
   const [isAdminLoggedIn, setIsAdminLoggedIn] = useState(false);
 
@@ -28,18 +28,7 @@ const Index = () => {
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
     }
-    setIsMenuOpen(false);
   };
-
-  const navigationItems = [
-    { label: "Home", id: "hero" },
-    { label: "Our Story", id: "story" },
-    { label: "Wedding Party", id: "party" },
-    { label: "Gallery", id: "gallery" },
-    { label: "RSVP", id: "rsvp" },
-    { label: "Guidetryb", url: "https://guidetryb.com/" },
-    { label: "Abba's Dwelling", url: "https://abbasdwelling.com/" }
-  ];
 
   const handleNavigation = (item: any) => {
     if (item.url) {
@@ -66,70 +55,7 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-white via-teal-50 to-white">
       {/* Navigation */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-b border-teal-100">
-        <div className="container mx-auto px-4 py-3">
-          <div className="flex justify-between items-center">
-            <div className="flex items-center space-x-3">
-              <img 
-                src="/lovable-uploads/f03016c7-1189-4490-b9f6-50f6d5fde1b5.png" 
-                alt="F&F Logo" 
-                className="h-8 w-auto"
-              />
-              <div className="text-2xl font-bold text-teal-600 font-playfair">Fx & F</div>
-            </div>
-            
-            {/* Desktop Navigation */}
-            <div className="hidden md:flex space-x-6">
-              {navigationItems.map((item) => (
-                <button 
-                  key={item.label}
-                  onClick={() => handleNavigation(item)} 
-                  className="text-gray-700 hover:text-teal-600 transition-colors flex items-center space-x-1"
-                >
-                  <span>{item.label}</span>
-                  {item.url && <ExternalLink size={14} />}
-                </button>
-              ))}
-            </div>
-
-            {/* Mobile Navigation */}
-            <Sheet open={isMenuOpen} onOpenChange={setIsMenuOpen}>
-              <SheetTrigger asChild className="md:hidden">
-                <Button variant="ghost" size="sm">
-                  <Menu className="h-6 w-6" />
-                </Button>
-              </SheetTrigger>
-              <SheetContent side="right" className="w-64 bg-white/95 backdrop-blur-md">
-                <div className="flex flex-col space-y-6 mt-8">
-                  <div className="text-center">
-                    <div className="flex items-center justify-center space-x-2 mb-2">
-                      <img 
-                        src="/lovable-uploads/f03016c7-1189-4490-b9f6-50f6d5fde1b5.png" 
-                        alt="F&F Logo" 
-                        className="h-6 w-auto"
-                      />
-                      <div className="text-2xl font-bold text-teal-600 font-playfair">Fx & F</div>
-                    </div>
-                    <p className="text-gray-600 text-sm">A Royal Affair</p>
-                  </div>
-                  <div className="flex flex-col space-y-4">
-                    {navigationItems.map((item) => (
-                      <button 
-                        key={item.label}
-                        onClick={() => handleNavigation(item)} 
-                        className="text-left text-gray-700 hover:text-teal-600 transition-colors py-2 px-4 rounded-lg hover:bg-teal-50 flex items-center justify-between"
-                      >
-                        <span>{item.label}</span>
-                        {item.url && <ExternalLink size={14} />}
-                      </button>
-                    ))}
-                  </div>
-                </div>
-              </SheetContent>
-            </Sheet>
-          </div>
-        </div>
-      </nav>
+      <Navigation onNavigate={handleNavigation} />
 
       {/* Hero Section */}
       <section id="hero">
@@ -177,30 +103,7 @@ const Index = () => {
       </section>
 
       {/* Footer */}
-      <footer className="bg-gray-900 text-white py-12">
-        <div className="container mx-auto px-4 text-center">
-          <div className="flex justify-center items-center space-x-2 mb-4">
-            <Heart className="text-teal-400" size={24} />
-            <span className="text-2xl font-bold">Fx & F</span>
-            <Heart className="text-teal-400" size={24} />
-          </div>
-          <p className="text-gray-400">Fxentso & Fater • A Royal Affair</p>
-          <p className="text-gray-500 mt-2">Made with love for our special day</p>
-          
-          {/* Admin Login Button */}
-          <div className="mt-6">
-            <Button
-              onClick={() => setShowAdminLogin(true)}
-              variant="ghost"
-              size="sm"
-              className="text-gray-500 hover:text-gray-300 flex items-center space-x-2 mx-auto"
-            >
-              <Settings className="w-4 h-4" />
-              <span>Admin</span>
-            </Button>
-          </div>
-        </div>
-      </footer>
+      <Footer onAdminClick={() => setShowAdminLogin(true)} />
 
       {/* Admin Login Modal */}
       {showAdminLogin && (

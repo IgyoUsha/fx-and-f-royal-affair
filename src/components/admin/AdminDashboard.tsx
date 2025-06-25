@@ -1,9 +1,9 @@
 
 import { useState } from "react";
-import { Users, Calendar, Mail, Phone, LogOut, Download } from "lucide-react";
+import { LogOut, Download } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
+import AdminStats from "./AdminStats";
+import RSVPTable from "./RSVPTable";
 
 interface RSVPData {
   id: string;
@@ -50,10 +50,6 @@ const AdminDashboard = ({ onLogout }: AdminDashboardProps) => {
       submittedAt: "2024-01-16T14:20:00Z"
     }
   ]);
-
-  const attendingGuests = rsvpData.filter(rsvp => rsvp.attendance === "yes");
-  const notAttendingGuests = rsvpData.filter(rsvp => rsvp.attendance === "no");
-  const totalGuests = attendingGuests.reduce((sum, rsvp) => sum + parseInt(rsvp.guestCount), 0);
 
   const exportToCSV = () => {
     const headers = ["Name", "Email", "Phone", "Attendance", "Guest Count", "Dietary Needs", "Restrictions", "Message", "Submitted At"];
@@ -113,98 +109,10 @@ const AdminDashboard = ({ onLogout }: AdminDashboardProps) => {
         </div>
 
         {/* Stats Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
-          <Card>
-            <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-              <CardTitle className="text-sm font-medium">Total RSVPs</CardTitle>
-              <Mail className="h-4 w-4 text-muted-foreground" />
-            </CardHeader>
-            <CardContent>
-              <div className="text-2xl font-bold">{rsvpData.length}</div>
-            </CardContent>
-          </Card>
-
-          <Card>
-            <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-              <CardTitle className="text-sm font-medium">Attending</CardTitle>
-              <Users className="h-4 w-4 text-muted-foreground" />
-            </CardHeader>
-            <CardContent>
-              <div className="text-2xl font-bold text-green-600">{attendingGuests.length}</div>
-            </CardContent>
-          </Card>
-
-          <Card>
-            <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-              <CardTitle className="text-sm font-medium">Not Attending</CardTitle>
-              <Calendar className="h-4 w-4 text-muted-foreground" />
-            </CardHeader>
-            <CardContent>
-              <div className="text-2xl font-bold text-red-600">{notAttendingGuests.length}</div>
-            </CardContent>
-          </Card>
-
-          <Card>
-            <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-              <CardTitle className="text-sm font-medium">Total Guests</CardTitle>
-              <Users className="h-4 w-4 text-muted-foreground" />
-            </CardHeader>
-            <CardContent>
-              <div className="text-2xl font-bold text-blue-600">{totalGuests}</div>
-            </CardContent>
-          </Card>
-        </div>
+        <AdminStats rsvpData={rsvpData} />
 
         {/* RSVP Table */}
-        <Card>
-          <CardHeader>
-            <CardTitle>RSVP Responses</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <div className="overflow-x-auto">
-              <Table>
-                <TableHeader>
-                  <TableRow>
-                    <TableHead>Name</TableHead>
-                    <TableHead>Email</TableHead>
-                    <TableHead>Phone</TableHead>
-                    <TableHead>Attendance</TableHead>
-                    <TableHead>Guests</TableHead>
-                    <TableHead>Dietary Needs</TableHead>
-                    <TableHead>Message</TableHead>
-                    <TableHead>Submitted</TableHead>
-                  </TableRow>
-                </TableHeader>
-                <TableBody>
-                  {rsvpData.map((rsvp) => (
-                    <TableRow key={rsvp.id}>
-                      <TableCell className="font-medium">{rsvp.name}</TableCell>
-                      <TableCell>{rsvp.email}</TableCell>
-                      <TableCell>{rsvp.phone}</TableCell>
-                      <TableCell>
-                        <span className={`px-2 py-1 rounded-full text-xs font-medium ${
-                          rsvp.attendance === "yes" 
-                            ? "bg-green-100 text-green-800" 
-                            : "bg-red-100 text-red-800"
-                        }`}>
-                          {rsvp.attendance === "yes" ? "Attending" : "Not Attending"}
-                        </span>
-                      </TableCell>
-                      <TableCell>{rsvp.attendance === "yes" ? rsvp.guestCount : "-"}</TableCell>
-                      <TableCell>
-                        {rsvp.specialDietaryNeeds || rsvp.dietaryRestrictions || "None"}
-                      </TableCell>
-                      <TableCell className="max-w-xs truncate">{rsvp.message}</TableCell>
-                      <TableCell>
-                        {new Date(rsvp.submittedAt).toLocaleDateString()}
-                      </TableCell>
-                    </TableRow>
-                  ))}
-                </TableBody>
-              </Table>
-            </div>
-          </CardContent>
-        </Card>
+        <RSVPTable rsvpData={rsvpData} />
       </div>
     </div>
   );
