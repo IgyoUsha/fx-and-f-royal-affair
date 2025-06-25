@@ -1,8 +1,12 @@
 
-import { Crown, Heart } from "lucide-react";
+import { Crown, Heart, X, ChevronLeft, ChevronRight } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { useState } from "react";
 
 const WeddingParty = () => {
+  const [selectedPhoto, setSelectedPhoto] = useState<{ src: string; name: string; role: string } | null>(null);
+
   const groomsmen = [
     { name: "Isaac", role: "Best Man", isBest: true, photo: "/lovable-uploads/7fa15cc7-24ac-4f56-a49b-0a417c0d9c37.png" },
     { name: "Martin-Luther", role: "Groomsman", photo: "/lovable-uploads/1c7244ae-3421-43bc-837c-12c0e23298fb.png" },
@@ -20,6 +24,20 @@ const WeddingParty = () => {
     { name: "Gracious", role: "Bridesmaid" },
     { name: "Michelle", role: "Bridesmaid" }
   ];
+
+  const openPhotoModal = (person: { name: string; role: string; photo?: string }) => {
+    if (person.photo) {
+      setSelectedPhoto({
+        src: person.photo,
+        name: person.name,
+        role: person.role
+      });
+    }
+  };
+
+  const closeModal = () => {
+    setSelectedPhoto(null);
+  };
 
   return (
     <div className="container mx-auto px-4">
@@ -58,9 +76,12 @@ const WeddingParty = () => {
                     <Crown className="text-teal-600 mx-auto mb-3" size={24} />
                   )}
                   {groomsman.photo ? (
-                    <div className={`mx-auto mb-4 rounded-full overflow-hidden border-4 border-teal-300 ${
-                      groomsman.isBest ? 'w-20 h-20' : 'w-16 h-16'
-                    }`}>
+                    <div 
+                      className={`mx-auto mb-4 rounded-full overflow-hidden border-4 border-teal-300 cursor-pointer hover:opacity-80 transition-opacity ${
+                        groomsman.isBest ? 'w-20 h-20' : 'w-16 h-16'
+                      }`}
+                      onClick={() => openPhotoModal(groomsman)}
+                    >
                       <img 
                         src={groomsman.photo} 
                         alt={groomsman.name}
@@ -106,9 +127,12 @@ const WeddingParty = () => {
                     <Crown className="text-yellow-600 mx-auto mb-3" size={24} />
                   )}
                   {bridesmaid.photo ? (
-                    <div className={`mx-auto mb-4 rounded-full overflow-hidden border-4 border-yellow-300 ${
-                      bridesmaid.isBest ? 'w-20 h-20' : 'w-16 h-16'
-                    }`}>
+                    <div 
+                      className={`mx-auto mb-4 rounded-full overflow-hidden border-4 border-yellow-300 cursor-pointer hover:opacity-80 transition-opacity ${
+                        bridesmaid.isBest ? 'w-20 h-20' : 'w-16 h-16'
+                      }`}
+                      onClick={() => openPhotoModal(bridesmaid)}
+                    >
                       <img 
                         src={bridesmaid.photo} 
                         alt={bridesmaid.name}
@@ -134,6 +158,38 @@ const WeddingParty = () => {
           </div>
         </div>
       </div>
+
+      {/* Photo Modal */}
+      {selectedPhoto && (
+        <div className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4">
+          <div className="relative max-w-2xl max-h-full">
+            <img 
+              src={selectedPhoto.src} 
+              alt={selectedPhoto.name}
+              className="max-w-full max-h-[80vh] object-contain rounded-lg"
+            />
+            
+            {/* Caption */}
+            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6 rounded-b-lg">
+              <h3 className="text-white text-xl font-bold text-center mb-1">
+                {selectedPhoto.name}
+              </h3>
+              <p className="text-white/80 text-center">
+                {selectedPhoto.role}
+              </p>
+            </div>
+
+            {/* Close Button */}
+            <Button
+              onClick={closeModal}
+              size="icon"
+              className="absolute top-4 right-4 bg-white/20 backdrop-blur-sm hover:bg-white/30 text-white border-none"
+            >
+              <X size={20} />
+            </Button>
+          </div>
+        </div>
+      )}
 
       {/* Fun Facts Section */}
       <div className="mt-16 text-center">
