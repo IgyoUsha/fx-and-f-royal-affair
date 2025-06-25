@@ -1,4 +1,3 @@
-
 import { Crown, Heart, X, ChevronLeft, ChevronRight } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -8,21 +7,21 @@ const WeddingParty = () => {
   const [selectedPhoto, setSelectedPhoto] = useState<{ src: string; name: string; role: string } | null>(null);
 
   const groomsmen = [
-    { name: "Isaac", role: "Best Man", isBest: true, photo: "/lovable-uploads/7fa15cc7-24ac-4f56-a49b-0a417c0d9c37.png" },
+    { name: "Isaac", role: "Best Man", isBest: true, photo: "/lovable-uploads/30c85af1-5a86-42e2-9c04-0b848f1b8035.png" },
     { name: "Martin-Luther", role: "Groomsman", photo: "/lovable-uploads/1c7244ae-3421-43bc-837c-12c0e23298fb.png" },
     { name: "Joshua", role: "Groomsman" },
-    { name: "Ife", role: "Groomsman", photo: "/lovable-uploads/757c749b-45a3-4df4-89d1-ed0ba210fee6.png" },
-    { name: "Usha", role: "Groomsman" },
+    { name: "Ife", role: "Groomsman", photo: "/lovable-uploads/7e27994f-cc9b-4f19-8703-67537198687c.png" },
+    { name: "Usha", role: "Groomsman", photo: "/lovable-uploads/50baff41-b0b2-4498-abb8-b9752de0fd90.png" },
     { name: "JM", role: "Groomsman" }
   ];
 
   const bridesmaids = [
-    { name: "Setemi", role: "Chief Bridesmaid", isBest: true, photo: "/lovable-uploads/10076756-5061-45ad-9b1c-ed93a8233296.png" },
+    { name: "Setemi", role: "Chief Bridesmaid", isBest: true, photo: "/lovable-uploads/c26c3024-d193-4635-b009-768d998db18e.png" },
     { name: "Iwuese", role: "Bridesmaid", photo: "/lovable-uploads/e95a4b9e-e23d-4fcd-a783-f16f0eb1da9a.png" },
     { name: "Kwaghdoobee", role: "Bridesmaid", photo: "/lovable-uploads/3302a681-d4c1-4da1-a4f3-513267a3377e.png" },
-    { name: "Christabel", role: "Bridesmaid" },
-    { name: "Gracious", role: "Bridesmaid" },
-    { name: "Michelle", role: "Bridesmaid" }
+    { name: "Christabel", role: "Bridesmaid", photo: "/lovable-uploads/8a367c9f-1c9c-4a93-b35d-e53be9b71dc8.png" },
+    { name: "Gracious", role: "Bridesmaid", photo: "/lovable-uploads/86b2ef11-76f5-49a3-b808-9229112a5c34.png" },
+    { name: "Michelle", role: "Bridesmaid", photo: "/lovable-uploads/4512a360-7bd4-46c5-9c36-b722d7cd5ab1.png" }
   ];
 
   const openPhotoModal = (person: { name: string; role: string; photo?: string }) => {
