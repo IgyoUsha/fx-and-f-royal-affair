@@ -1,9 +1,8 @@
 
-import { useState, useRef } from "react";
-import { Upload, Camera } from "lucide-react";
+import { useState } from "react";
+import { Upload, Camera, ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
 
 interface PhotoUploadFormProps {
@@ -16,40 +15,10 @@ interface PhotoUploadFormProps {
 }
 
 const PhotoUploadForm = ({ onPhotosUploaded }: PhotoUploadFormProps) => {
-  const [dragActive, setDragActive] = useState(false);
   const [uploaderName, setUploaderName] = useState("");
-  const [message, setMessage] = useState("");
-  const fileInputRef = useRef<HTMLInputElement>(null);
   const { toast } = useToast();
 
-  const handleDrag = (e: React.DragEvent) => {
-    e.preventDefault();
-    e.stopPropagation();
-    if (e.type === "dragenter" || e.type === "dragover") {
-      setDragActive(true);
-    } else if (e.type === "dragleave") {
-      setDragActive(false);
-    }
-  };
-
-  const handleDrop = (e: React.DragEvent) => {
-    e.preventDefault();
-    e.stopPropagation();
-    setDragActive(false);
-    
-    if (e.dataTransfer.files && e.dataTransfer.files[0]) {
-      handleFiles(e.dataTransfer.files);
-    }
-  };
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    e.preventDefault();
-    if (e.target.files && e.target.files[0]) {
-      handleFiles(e.target.files);
-    }
-  };
-
-  const handleFiles = async (files: FileList) => {
+  const handleUploadClick = () => {
     if (!uploaderName.trim()) {
       toast({
         title: "Name Required",
@@ -59,59 +28,13 @@ const PhotoUploadForm = ({ onPhotosUploaded }: PhotoUploadFormProps) => {
       return;
     }
 
-    const newPhotos: Array<{
-      id: string;
-      url: string;
-      message: string;
-      uploaderName: string;
-    }> = [];
-
-    // Process files and upload to Google Drive
-    for (const file of Array.from(files)) {
-      if (file.type.startsWith('image/')) {
-        try {
-          // Create a temporary URL for immediate display
-          const reader = new FileReader();
-          reader.onload = (e) => {
-            const newPhoto = {
-              id: Date.now().toString() + Math.random().toString(),
-              url: e.target?.result as string,
-              message: message.trim(),
-              uploaderName: uploaderName.trim()
-            };
-            newPhotos.push(newPhoto);
-          };
-          reader.readAsDataURL(file);
-
-          // TODO: Upload to Google Drive in the background
-          // This will be implemented with the Google Drive API
-          console.log('Uploading to Google Drive:', file.name);
-          
-        } catch (error) {
-          console.error('Error uploading file:', error);
-          toast({
-            title: "Upload Error",
-            description: "There was an error uploading your photo. Please try again.",
-            variant: "destructive",
-          });
-        }
-      }
-    }
-
-    // Wait a bit for FileReader to process
-    setTimeout(() => {
-      onPhotosUploaded(newPhotos);
-      setMessage(""); // Clear message after upload
-      
-      toast({
-        title: "Photo Uploaded!",
-        description: "Thank you for sharing this special moment with us!",
-      });
-    }, 100);
-  };
-
-  const onButtonClick = () => {
-    fileInputRef.current?.click();
+    // Open Google Drive folder in a new tab
+    window.open("https://drive.google.com/drive/folders/1sUBAXQnjAghWcTfHGXtuwgPfoR0KGNl_", "_blank");
+    
+    toast({
+      title: "Redirecting to Photo Upload",
+      description: `Hi ${uploaderName}! You're being redirected to upload your photos.`,
+    });
   };
 
   return (
@@ -133,54 +56,35 @@ const PhotoUploadForm = ({ onPhotosUploaded }: PhotoUploadFormProps) => {
               />
             </div>
 
-            {/* Message Input */}
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
-                Message (Optional)
-              </label>
-              <Textarea
-                value={message}
-                onChange={(e) => setMessage(e.target.value)}
-                placeholder="Share a special message or memory..."
-                className="resize-none"
-                rows={3}
-              />
+            {/* Upload Button */}
+            <div className="text-center">
+              <div className="border-2 border-dashed border-gray-300 rounded-lg p-8 hover:border-teal-400 hover:bg-teal-50 transition-colors">
+                <Upload className="mx-auto mb-4 text-teal-500" size={48} />
+                <h3 className="text-lg font-semibold text-gray-700 mb-2">
+                  Upload Your Photos
+                </h3>
+                <p className="text-gray-600 mb-4">
+                  Click below to upload your wedding photos and memories
+                </p>
+                <Button 
+                  onClick={handleUploadClick}
+                  className="bg-gradient-to-r from-teal-500 to-teal-600 hover:from-teal-600 hover:to-teal-700"
+                >
+                  <ExternalLink className="mr-2" size={16} />
+                  Upload Photos
+                </Button>
+              </div>
             </div>
 
-            {/* Upload Area */}
-            <div
-              className={`relative border-2 border-dashed rounded-lg p-8 text-center transition-colors ${
-                dragActive 
-                  ? 'border-teal-500 bg-teal-50' 
-                  : 'border-gray-300 hover:border-teal-400 hover:bg-teal-50'
-              }`}
-              onDragEnter={handleDrag}
-              onDragLeave={handleDrag}
-              onDragOver={handleDrag}
-              onDrop={handleDrop}
-            >
-              <input
-                ref={fileInputRef}
-                type="file"
-                multiple
-                accept="image/*"
-                onChange={handleChange}
-                className="hidden"
-              />
-              
-              <Upload className="mx-auto mb-4 text-teal-500" size={48} />
-              <h3 className="text-lg font-semibold text-gray-700 mb-2">
-                Upload Your Photos
-              </h3>
-              <p className="text-gray-600 mb-4">
-                Drag and drop your images here, or click to select files
-              </p>
-              <Button 
-                onClick={onButtonClick}
-                className="bg-gradient-to-r from-teal-500 to-teal-600 hover:from-teal-600 hover:to-teal-700"
-              >
-                Choose Photos
-              </Button>
+            {/* Instructions */}
+            <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
+              <h4 className="font-semibold text-blue-800 mb-2">Instructions:</h4>
+              <ul className="text-sm text-blue-700 space-y-1">
+                <li>• Enter your name above before clicking upload</li>
+                <li>• You'll be taken to our photo collection folder</li>
+                <li>• Drag and drop your photos or click "New" → "File upload"</li>
+                <li>• Please name your photos with your name for easy identification</li>
+              </ul>
             </div>
           </div>
         </CardContent>

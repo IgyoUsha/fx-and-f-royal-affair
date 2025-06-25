@@ -1,29 +1,13 @@
 
-import { useState } from "react";
 import { Camera, Image } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import PhotoUploadForm from "./PhotoUploadForm";
-import PhotoGrid from "./PhotoGrid";
 
 const PhotoUpload = () => {
-  const [uploadedPhotos, setUploadedPhotos] = useState<Array<{
-    id: string;
-    url: string;
-    message: string;
-    uploaderName: string;
-  }>>([]);
-
-  const handlePhotosUploaded = (newPhotos: Array<{
-    id: string;
-    url: string;
-    message: string;
-    uploaderName: string;
-  }>) => {
-    setUploadedPhotos(prev => [...prev, ...newPhotos]);
-  };
-
-  const removePhoto = (id: string) => {
-    setUploadedPhotos(prev => prev.filter(photo => photo.id !== id));
+  // Remove local photo state since we're using Google Drive
+  const handlePhotosUploaded = () => {
+    // This function is kept for compatibility but doesn't need to do anything
+    // since photos are uploaded directly to Google Drive
   };
 
   return (
@@ -45,9 +29,6 @@ const PhotoUpload = () => {
       {/* Upload Form */}
       <PhotoUploadForm onPhotosUploaded={handlePhotosUploaded} />
 
-      {/* Uploaded Photos Grid */}
-      <PhotoGrid photos={uploadedPhotos} onRemovePhoto={removePhoto} />
-
       {/* Instructions */}
       <div className="mt-12 text-center">
         <Card className="bg-gradient-to-r from-yellow-50 via-white to-yellow-50 border-none shadow-xl max-w-4xl mx-auto">
@@ -65,7 +46,7 @@ const PhotoUpload = () => {
               </div>
               <div className="flex items-center justify-center space-x-2">
                 <Image className="text-rose-500" size={16} />
-                <span>Add personal messages</span>
+                <span>Easy drag & drop upload</span>
               </div>
               <div className="flex items-center justify-center space-x-2">
                 <Camera className="text-purple-500" size={16} />
