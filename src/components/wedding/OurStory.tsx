@@ -93,11 +93,14 @@ const OurStory = () => {
           
           <div className="space-y-8">
             {[
-              { title: "First Met in Russia", desc: "When our paths crossed by God's design", side: "left" },
-              { title: "Growing in Fellowship", desc: "Building our friendship in faith", side: "right" },
-              { title: "Relationship Begins", desc: "Taking the step with God's blessing", side: "left" },
-              { title: "The Proposal", desc: "He asked, she said yes - Praise God!", side: "right" },
-              { title: "Wedding Day", desc: "Our covenant before God begins", side: "left" }
+              { title: "First Met - January 2019", desc: "Met at SFC winter camp in Rostov Russia", side: "left" },
+              { title: "Growing Closer - August 2020", desc: "Began communicating more closely as part of a discipleship group", side: "right" },
+              { title: "Special Visit - December 2020", desc: "Fater visited Fxentso's city of Belgorod and did a tour with her and friends", side: "left" },
+              { title: "God's Confirmation - April 2023", desc: "God spoke to Fater about Fxentso", side: "right" },
+              { title: "Divine Confirmation - September 2023", desc: "God further confirmed His speaking through His word and human disciplers", side: "left" },
+              { title: "The Proposal - October 2023", desc: "Fater made his proposal to Fxentso", side: "right" },
+              { title: "The Answer - November 2023", desc: "Fxentso gave her joyful reply - Yes!", side: "left" },
+              { title: "Wedding Day - August 2025", desc: "Our covenant before God begins", side: "right" }
             ].map((milestone, index) => (
               <div key={index} className="relative flex items-center">
                 <div className={`w-full flex ${milestone.side === 'right' ? 'justify-end' : 'justify-start'}`}>

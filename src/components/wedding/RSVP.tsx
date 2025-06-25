@@ -14,6 +14,7 @@ const RSVP = () => {
     attendance: "",
     guestCount: "1",
     dietaryRestrictions: "",
+    specialDietaryNeeds: "",
     message: ""
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -44,6 +45,7 @@ const RSVP = () => {
       attendance: "",
       guestCount: "1",
       dietaryRestrictions: "",
+      specialDietaryNeeds: "",
       message: ""
     });
     setIsSubmitting(false);
@@ -159,11 +161,30 @@ const RSVP = () => {
                 </div>
               )}
 
+              {/* Special Dietary Needs */}
+              {formData.attendance === "yes" && (
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                    Special Dietary Needs
+                  </label>
+                  <select
+                    name="specialDietaryNeeds"
+                    value={formData.specialDietaryNeeds}
+                    onChange={handleInputChange}
+                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-teal-500"
+                  >
+                    <option value="">No dietary needs</option>
+                    <option value="vegetarian">Vegetarian</option>
+                    <option value="vegan">Vegan</option>
+                  </select>
+                </div>
+              )}
+
               {/* Dietary Restrictions */}
               {formData.attendance === "yes" && (
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Dietary Restrictions
+                    Other Dietary Restrictions or Allergies
                   </label>
                   <input
                     type="text"
@@ -171,7 +192,7 @@ const RSVP = () => {
                     value={formData.dietaryRestrictions}
                     onChange={handleInputChange}
                     className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-teal-500"
-                    placeholder="Any food allergies or preferences?"
+                    placeholder="Any food allergies or other preferences?"
                   />
                 </div>
               )}
@@ -216,7 +237,7 @@ const RSVP = () => {
                   <Calendar className="text-teal-600 mt-1" size={20} />
                   <div>
                     <h4 className="font-semibold text-gray-800">Date & Time</h4>
-                    <p className="text-gray-600">[Wedding Date]</p>
+                    <p className="text-gray-600">Saturday, August 16th, 2025</p>
                     <p className="text-gray-600">Ceremony: [Time]</p>
                     <p className="text-gray-600">Reception: [Time]</p>
                   </div>
@@ -226,7 +247,7 @@ const RSVP = () => {
                   <MapPin className="text-teal-600 mt-1" size={20} />
                   <div>
                     <h4 className="font-semibold text-gray-800">Venue</h4>
-                    <p className="text-gray-600">[Venue Name]</p>
+                    <p className="text-gray-600">Makurdi, Nigeria</p>
                     <p className="text-gray-600">[Venue Address]</p>
                     <p className="text-gray-600">[City, State]</p>
                   </div>

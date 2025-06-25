@@ -1,21 +1,24 @@
+
 import { Crown, Heart } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 
 const WeddingParty = () => {
   const groomsmen = [
-    { name: "Isaac", role: "Best Man", isBest: true },
-    { name: "Martin-Luther", role: "Groomsman" },
+    { name: "Isaac", role: "Best Man", isBest: true, photo: "/lovable-uploads/7fa15cc7-24ac-4f56-a49b-0a417c0d9c37.png" },
+    { name: "Martin-Luther", role: "Groomsman", photo: "/lovable-uploads/1c7244ae-3421-43bc-837c-12c0e23298fb.png" },
     { name: "Joshua", role: "Groomsman" },
-    { name: "Ife", role: "Groomsman" },
+    { name: "Ife", role: "Groomsman", photo: "/lovable-uploads/757c749b-45a3-4df4-89d1-ed0ba210fee6.png" },
     { name: "Usha", role: "Groomsman" },
     { name: "JM", role: "Groomsman" }
   ];
 
   const bridesmaids = [
-    { name: "Setemi", role: "Chief Bridesmaid", isBest: true },
-    { name: "Iwuese", role: "Bridesmaid" },
-    { name: "Kwaghdoobee", role: "Bridesmaid" },
-    { name: "Bella", role: "Bridesmaid" }
+    { name: "Setemi", role: "Chief Bridesmaid", isBest: true, photo: "/lovable-uploads/10076756-5061-45ad-9b1c-ed93a8233296.png" },
+    { name: "Iwuese", role: "Bridesmaid", photo: "/lovable-uploads/e95a4b9e-e23d-4fcd-a783-f16f0eb1da9a.png" },
+    { name: "Kwaghdoobee", role: "Bridesmaid", photo: "/lovable-uploads/3302a681-d4c1-4da1-a4f3-513267a3377e.png" },
+    { name: "Christabel", role: "Bridesmaid" },
+    { name: "Gracious", role: "Bridesmaid" },
+    { name: "Michelle", role: "Bridesmaid" }
   ];
 
   return (
@@ -54,11 +57,23 @@ const WeddingParty = () => {
                   {groomsman.isBest && (
                     <Crown className="text-teal-600 mx-auto mb-3" size={24} />
                   )}
-                  <div className={`mx-auto mb-4 rounded-full bg-gradient-to-br from-teal-500 to-teal-600 flex items-center justify-center text-white font-bold ${
-                    groomsman.isBest ? 'w-20 h-20 text-2xl' : 'w-16 h-16 text-xl'
-                  }`}>
-                    {groomsman.name.charAt(0)}
-                  </div>
+                  {groomsman.photo ? (
+                    <div className={`mx-auto mb-4 rounded-full overflow-hidden border-4 border-teal-300 ${
+                      groomsman.isBest ? 'w-20 h-20' : 'w-16 h-16'
+                    }`}>
+                      <img 
+                        src={groomsman.photo} 
+                        alt={groomsman.name}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                  ) : (
+                    <div className={`mx-auto mb-4 rounded-full bg-gradient-to-br from-teal-500 to-teal-600 flex items-center justify-center text-white font-bold ${
+                      groomsman.isBest ? 'w-20 h-20 text-2xl' : 'w-16 h-16 text-xl'
+                    }`}>
+                      {groomsman.name.charAt(0)}
+                    </div>
+                  )}
                   <h4 className={`font-bold text-gray-800 ${groomsman.isBest ? 'text-xl' : 'text-lg'}`}>
                     {groomsman.name}
                   </h4>
@@ -90,11 +105,23 @@ const WeddingParty = () => {
                   {bridesmaid.isBest && (
                     <Crown className="text-yellow-600 mx-auto mb-3" size={24} />
                   )}
-                  <div className={`mx-auto mb-4 rounded-full bg-gradient-to-br from-yellow-400 to-yellow-500 flex items-center justify-center text-white font-bold ${
-                    bridesmaid.isBest ? 'w-20 h-20 text-2xl' : 'w-16 h-16 text-xl'
-                  }`}>
-                    {bridesmaid.name.charAt(0)}
-                  </div>
+                  {bridesmaid.photo ? (
+                    <div className={`mx-auto mb-4 rounded-full overflow-hidden border-4 border-yellow-300 ${
+                      bridesmaid.isBest ? 'w-20 h-20' : 'w-16 h-16'
+                    }`}>
+                      <img 
+                        src={bridesmaid.photo} 
+                        alt={bridesmaid.name}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                  ) : (
+                    <div className={`mx-auto mb-4 rounded-full bg-gradient-to-br from-yellow-400 to-yellow-500 flex items-center justify-center text-white font-bold ${
+                      bridesmaid.isBest ? 'w-20 h-20 text-2xl' : 'w-16 h-16 text-xl'
+                    }`}>
+                      {bridesmaid.name.charAt(0)}
+                    </div>
+                  )}
                   <h4 className={`font-bold text-gray-800 ${bridesmaid.isBest ? 'text-xl' : 'text-lg'}`}>
                     {bridesmaid.name}
                   </h4>
