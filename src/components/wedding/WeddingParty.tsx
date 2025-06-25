@@ -1,3 +1,4 @@
+
 import { Crown, Heart, X, ChevronLeft, ChevronRight } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -7,10 +8,10 @@ const WeddingParty = () => {
   const [selectedPhoto, setSelectedPhoto] = useState<{ src: string; name: string; role: string } | null>(null);
 
   const groomsmen = [
-    { name: "Isaac", role: "Best Man", isBest: true, photo: "/lovable-uploads/30c85af1-5a86-42e2-9c04-0b848f1b8035.png" },
+    { name: "Isaac", role: "Best Man", isBest: true, photo: "/lovable-uploads/7e27994f-cc9b-4f19-8703-67537198687c.png" },
     { name: "Martin-Luther", role: "Groomsman", photo: "/lovable-uploads/1c7244ae-3421-43bc-837c-12c0e23298fb.png" },
     { name: "Joshua", role: "Groomsman" },
-    { name: "Ife", role: "Groomsman", photo: "/lovable-uploads/7e27994f-cc9b-4f19-8703-67537198687c.png" },
+    { name: "Ife", role: "Groomsman", photo: "/lovable-uploads/30c85af1-5a86-42e2-9c04-0b848f1b8035.png" },
     { name: "Usha", role: "Groomsman", photo: "/lovable-uploads/50baff41-b0b2-4498-abb8-b9752de0fd90.png" },
     { name: "JM", role: "Groomsman" }
   ];
