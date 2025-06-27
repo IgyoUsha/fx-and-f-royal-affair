@@ -36,22 +36,22 @@ const Navigation = ({ onNavigate }: NavigationProps) => {
     <nav className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-b border-teal-100">
       <div className="container mx-auto px-4 py-3">
         <div className="flex justify-between items-center">
-          <div className="flex items-center">
+          {/* Logo and Theme Scripture */}
+          <div className="flex items-center space-x-4">
             <img 
               src="/lovable-uploads/854e4e21-3cd0-4bb5-8d77-be18fd390b65.png" 
               alt="F&F Wedding Logo" 
               className="h-12 w-auto"
             />
-          </div>
-          
-          {/* Theme Scripture - Desktop */}
-          <div className="hidden lg:block text-center">
-            <p className="text-teal-700 font-semibold text-lg italic">
-              "A Feast for all Nations"
-            </p>
-            <p className="text-teal-600 text-sm">
-              - Esther 2:18
-            </p>
+            {/* Theme Scripture - Always visible */}
+            <div className="hidden sm:block">
+              <p className="text-teal-700 font-semibold text-base lg:text-lg italic">
+                "A Feast for all Nations"
+              </p>
+              <p className="text-teal-600 text-xs lg:text-sm text-center">
+                - Esther 2:18
+              </p>
+            </div>
           </div>
           
           {/* Desktop Navigation */}
