@@ -25,8 +25,12 @@ const Testimonials = () => {
           <CardContent className="p-8">
             <div className="text-center mb-6">
               <Crown className="text-teal-600 mx-auto mb-4" size={32} />
-              <div className="w-20 h-20 mx-auto mb-4 rounded-full bg-gradient-to-br from-teal-500 to-teal-600 flex items-center justify-center">
-                <span className="text-white text-2xl font-bold">I</span>
+              <div className="w-20 h-20 mx-auto mb-4 rounded-full overflow-hidden border-4 border-teal-300">
+                <img 
+                  src="/lovable-uploads/7e27994f-cc9b-4f19-8703-67537198687c.png" 
+                  alt="Isaac"
+                  className="w-full h-full object-cover"
+                />
               </div>
               <h3 className="text-2xl font-bold text-gray-800">Isaac</h3>
               <p className="text-teal-600 font-semibold">Best Man</p>
@@ -62,8 +66,12 @@ const Testimonials = () => {
           <CardContent className="p-8">
             <div className="text-center mb-6">
               <Crown className="text-yellow-600 mx-auto mb-4" size={32} />
-              <div className="w-20 h-20 mx-auto mb-4 rounded-full bg-gradient-to-br from-yellow-400 to-yellow-500 flex items-center justify-center">
-                <span className="text-white text-2xl font-bold">S</span>
+              <div className="w-20 h-20 mx-auto mb-4 rounded-full overflow-hidden border-4 border-yellow-300">
+                <img 
+                  src="/lovable-uploads/c26c3024-d193-4635-b009-768d998db18e.png" 
+                  alt="Setemi"
+                  className="w-full h-full object-cover"
+                />
               </div>
               <h3 className="text-2xl font-bold text-gray-800">Setemi</h3>
               <p className="text-yellow-600 font-semibold">Chief Bridesmaid</p>
