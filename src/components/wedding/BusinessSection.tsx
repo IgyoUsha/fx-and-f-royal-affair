@@ -1,5 +1,4 @@
-
-import { ExternalLink, Sparkles, Home } from "lucide-react";
+import { ExternalLink, Home, Sparkles } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 
@@ -12,7 +11,7 @@ const BusinessSection = () => {
         </h2>
         <div className="flex items-center justify-center space-x-4 mb-6">
           <div className="h-px bg-gradient-to-r from-transparent via-purple-500 to-transparent flex-1 max-w-32"></div>
-          <Sparkles className="text-purple-500" size={24} />
+          <div className="w-6 h-6 bg-purple-500 rounded-full"></div>
           <div className="h-px bg-gradient-to-r from-transparent via-purple-500 to-transparent flex-1 max-w-32"></div>
         </div>
         <p className="text-gray-600 text-lg max-w-2xl mx-auto">
@@ -24,8 +23,12 @@ const BusinessSection = () => {
         {/* Guidetryb */}
         <Card className="bg-gradient-to-br from-blue-50 to-white border-blue-200 shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
           <CardContent className="p-8 text-center">
-            <div className="w-20 h-20 mx-auto mb-6 rounded-full bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center">
-              <Sparkles className="text-white" size={32} />
+            <div className="w-20 h-20 mx-auto mb-6 rounded-2xl overflow-hidden">
+              <img 
+                src="/lovable-uploads/824a9edd-7366-4e84-949a-54617b8b7335.png" 
+                alt="Guidetryb Logo" 
+                className="w-full h-full object-cover"
+              />
             </div>
             
             <h3 className="text-3xl font-bold text-gray-800 mb-4">Guidetryb</h3>
