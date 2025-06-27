@@ -24,8 +24,12 @@ const OurStory = () => {
         <Card className="bg-gradient-to-br from-teal-50 to-white border-teal-200 shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
           <CardContent className="p-8">
             <div className="text-center mb-6">
-              <div className="w-24 h-24 mx-auto mb-4 rounded-full bg-gradient-to-br from-teal-500 to-teal-600 flex items-center justify-center">
-                <span className="text-white text-2xl font-bold">F</span>
+              <div className="w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden border-4 border-teal-300">
+                <img 
+                  src="/lovable-uploads/ae626318-4d1d-452f-9413-0ad8c13805d4.png" 
+                  alt="Fater"
+                  className="w-full h-full object-cover"
+                />
               </div>
               <h3 className="text-2xl font-bold text-gray-800">Fater's Story</h3>
               <p className="text-teal-600 font-semibold">The Groom</p>
@@ -54,8 +58,12 @@ const OurStory = () => {
         <Card className="bg-gradient-to-br from-yellow-50 to-white border-yellow-200 shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
           <CardContent className="p-8">
             <div className="text-center mb-6">
-              <div className="w-24 h-24 mx-auto mb-4 rounded-full bg-gradient-to-br from-yellow-400 to-yellow-500 flex items-center justify-center">
-                <span className="text-white text-2xl font-bold">F</span>
+              <div className="w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden border-4 border-yellow-300">
+                <img 
+                  src="/lovable-uploads/ff9a079b-73d7-489e-93c0-c026f25d1d5a.png" 
+                  alt="Fxentso"
+                  className="w-full h-full object-cover"
+                />
               </div>
               <h3 className="text-2xl font-bold text-gray-800">Fxentso's Story</h3>
               <p className="text-yellow-600 font-semibold">The Bride</p>

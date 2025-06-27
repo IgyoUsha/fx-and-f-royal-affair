@@ -44,6 +44,16 @@ const Navigation = ({ onNavigate }: NavigationProps) => {
             />
           </div>
           
+          {/* Theme Scripture - Desktop */}
+          <div className="hidden lg:block text-center">
+            <p className="text-teal-700 font-semibold text-lg italic">
+              "A Feast for all Nations"
+            </p>
+            <p className="text-teal-600 text-sm">
+              - Esther 2:18
+            </p>
+          </div>
+          
           {/* Desktop Navigation */}
           <div className="hidden md:flex space-x-6">
             {navigationItems.map((item) => (
@@ -76,6 +86,16 @@ const Navigation = ({ onNavigate }: NavigationProps) => {
                     />
                   </div>
                   <p className="text-gray-600 text-sm">A Royal Affair</p>
+                  
+                  {/* Theme Scripture - Mobile */}
+                  <div className="mt-4 p-3 bg-teal-50 rounded-lg">
+                    <p className="text-teal-700 font-semibold text-sm italic">
+                      "A Feast for all Nations"
+                    </p>
+                    <p className="text-teal-600 text-xs">
+                      - Esther 2:18
+                    </p>
+                  </div>
                 </div>
                 <div className="flex flex-col space-y-4">
                   {navigationItems.map((item) => (

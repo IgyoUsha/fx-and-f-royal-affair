@@ -1,3 +1,4 @@
+
 import { ExternalLink, Home, Sparkles } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -66,8 +67,12 @@ const BusinessSection = () => {
         {/* Abba's Dwelling */}
         <Card className="bg-gradient-to-br from-green-50 to-white border-green-200 shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
           <CardContent className="p-8 text-center">
-            <div className="w-20 h-20 mx-auto mb-6 rounded-full bg-gradient-to-br from-green-500 to-green-600 flex items-center justify-center">
-              <Home className="text-white" size={32} />
+            <div className="w-20 h-20 mx-auto mb-6 rounded-2xl overflow-hidden">
+              <img 
+                src="/lovable-uploads/645a9b3e-ab5e-44f8-ba21-88227c0bcf6d.png" 
+                alt="Abba's Dwelling Logo" 
+                className="w-full h-full object-cover"
+              />
             </div>
             
             <h3 className="text-3xl font-bold text-gray-800 mb-4">Abba's Dwelling</h3>
