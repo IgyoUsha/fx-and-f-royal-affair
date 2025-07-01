@@ -1,3 +1,4 @@
+
 import { Crown, Heart, X, ChevronLeft, ChevronRight } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -17,7 +18,7 @@ const WeddingParty = () => {
 
   const bridesmaids = [
     { name: "Setemi", role: "Chief Bridesmaid", isBest: true, photo: "/lovable-uploads/c26c3024-d193-4635-b009-768d998db18e.png" },
-    { name: "Iwuese", role: "Bridesmaid", photo: "/lovable-uploads/e95a4b9e-e23d-4fcd-a783-f16f0eb1da9a.png" },
+    { name: "Iwuese", role: "Bridesmaid", photo: "/lovable-uploads/f412be39-7f27-4547-a90c-dc309450ffdc.png" },
     { name: "Kwaghdoobee", role: "Bridesmaid", photo: "/lovable-uploads/3302a681-d4c1-4da1-a4f3-513267a3377e.png" },
     { name: "Christabel", role: "Bridesmaid", photo: "/lovable-uploads/8a367c9f-1c9c-4a93-b35d-e53be9b71dc8.png" },
     { name: "Gracious", role: "Bridesmaid", photo: "/lovable-uploads/86b2ef11-76f5-49a3-b808-9229112a5c34.png" },
