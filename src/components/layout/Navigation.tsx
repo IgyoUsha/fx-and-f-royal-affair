@@ -23,7 +23,7 @@ const Navigation = ({ onNavigate }: NavigationProps) => {
     { label: "Wedding Party", id: "party" },
     { label: "Gallery", id: "gallery" },
     { label: "RSVP", id: "rsvp" },
-    { label: "Guidetryb", url: "https://guidetryb.com/" },
+    { label: "Guidetryb", url: "https://linktr.ee/guidetryb?utm_source=linktree_profile_share&ltsid=2ef777fe-3e69-4f6a-84db-c501861fde21" },
     { label: "Abba's Dwelling", url: "https://abbasdwelling.com/" }
   ];
 
@@ -45,10 +45,10 @@ const Navigation = ({ onNavigate }: NavigationProps) => {
             />
             {/* Theme Scripture - Always visible */}
             <div className="hidden sm:block">
-              <p className="text-teal-700 font-semibold text-base lg:text-lg italic">
+              <p className="text-yellow-600 font-semibold text-base lg:text-lg italic">
                 "A Feast for all Nations"
               </p>
-              <p className="text-teal-600 text-xs lg:text-sm text-center">
+              <p className="text-yellow-500 text-xs lg:text-sm text-center">
                 - Esther 2:18
               </p>
             </div>
@@ -88,11 +88,11 @@ const Navigation = ({ onNavigate }: NavigationProps) => {
                   <p className="text-gray-600 text-sm">A Royal Affair</p>
                   
                   {/* Theme Scripture - Mobile */}
-                  <div className="mt-4 p-3 bg-teal-50 rounded-lg">
-                    <p className="text-teal-700 font-semibold text-sm italic">
+                  <div className="mt-4 p-3 bg-yellow-50 rounded-lg">
+                    <p className="text-yellow-600 font-semibold text-sm italic">
                       "A Feast for all Nations"
                     </p>
-                    <p className="text-teal-600 text-xs">
+                    <p className="text-yellow-500 text-xs">
                       - Esther 2:18
                     </p>
                   </div>

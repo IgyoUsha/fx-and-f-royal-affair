@@ -1,8 +1,18 @@
-
-import { Heart, Quote } from "lucide-react";
+import { Heart, Quote, ChevronDown, ChevronUp } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { useState } from "react";
 
 const OurStory = () => {
+  const [expandedCards, setExpandedCards] = useState<{[key: string]: boolean}>({});
+
+  const toggleExpanded = (cardId: string) => {
+    setExpandedCards(prev => ({
+      ...prev,
+      [cardId]: !prev[cardId]
+    }));
+  };
+
   return (
     <div className="container mx-auto px-4">
       <div className="text-center mb-12">
@@ -39,14 +49,41 @@ const OurStory = () => {
             <div className="text-gray-700 leading-relaxed space-y-4">
               <p>
                 Thousands of miles away from home in Russia, I never expected to find the love of my life. 
-                But when I met Fxentso, I knew God had orchestrated something beautiful. Her radiant smile 
-                and gentle spirit captured my heart from the very beginning.
+                But when I met Fxentso, I knew God had orchestrated something beautiful.
               </p>
-              <p>
-                What amazed me most was how she carried herself with such grace and wisdom. Being away from 
-                Nigeria, finding someone who shared my values and faith felt like a miracle. She didn't 
-                just complete me; she made me want to be a better man.
-              </p>
+              
+              {expandedCards['fater'] && (
+                <>
+                  <p>
+                    Her radiant smile and gentle spirit captured my heart from the very beginning.
+                    What amazed me most was how she carried herself with such grace and wisdom. Being away from 
+                    Nigeria, finding someone who shared my values and faith felt like a miracle.
+                  </p>
+                  <p>
+                    She didn't just complete me; she made me want to be a better man.
+                  </p>
+                </>
+              )}
+              
+              <Button
+                variant="ghost"
+                size="sm"
+                onClick={() => toggleExpanded('fater')}
+                className="text-teal-600 hover:text-teal-700 p-0 h-auto font-normal"
+              >
+                {expandedCards['fater'] ? (
+                  <>
+                    <ChevronUp size={16} className="mr-1" />
+                    Read Less
+                  </>
+                ) : (
+                  <>
+                    <ChevronDown size={16} className="mr-1" />
+                    Read More
+                  </>
+                )}
+              </Button>
+              
               <p className="italic text-teal-700 font-medium">
                 "In a foreign land, God gave me my home in her."
               </p>
@@ -60,7 +97,7 @@ const OurStory = () => {
             <div className="text-center mb-6">
               <div className="w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden border-4 border-yellow-300">
                 <img 
-                  src="/lovable-uploads/ff9a079b-73d7-489e-93c0-c026f25d1d5a.png" 
+                  src="/lovable-uploads/ecc64a51-ee3b-424d-9bbd-5dc32902e2db.png" 
                   alt="Fxentso"
                   className="w-full h-full object-cover"
                 />
@@ -73,14 +110,42 @@ const OurStory = () => {
             <div className="text-gray-700 leading-relaxed space-y-4">
               <p>
                 Being far from home in Russia was challenging, but meeting Fater changed everything. 
-                There was something different about him - his genuine heart, his love for God, and 
-                the way he treated everyone with such kindness and respect.
+                There was something different about him - his genuine heart, his love for God.
               </p>
-              <p>
-                What drew me to him wasn't just his charm, but his unwavering faith and the way he 
-                encouraged me to chase my dreams. Even across continents, he made me feel at home. 
-                I knew God had answered my prayers for a godly man who would love and cherish me.
-              </p>
+              
+              {expandedCards['fxentso'] && (
+                <>
+                  <p>
+                    And the way he treated everyone with such kindness and respect.
+                    What drew me to him wasn't just his charm, but his unwavering faith and the way he 
+                    encouraged me to chase my dreams.
+                  </p>
+                  <p>
+                    Even across continents, he made me feel at home. 
+                    I knew God had answered my prayers for a godly man who would love and cherish me.
+                  </p>
+                </>
+              )}
+              
+              <Button
+                variant="ghost"
+                size="sm"
+                onClick={() => toggleExpanded('fxentso')}
+                className="text-yellow-600 hover:text-yellow-700 p-0 h-auto font-normal"
+              >
+                {expandedCards['fxentso'] ? (
+                  <>
+                    <ChevronUp size={16} className="mr-1" />
+                    Read Less
+                  </>
+                ) : (
+                  <>
+                    <ChevronDown size={16} className="mr-1" />
+                    Read More
+                  </>
+                )}
+              </Button>
+              
               <p className="italic text-yellow-700 font-medium">
                 "In him, I found God's perfect plan for my life."
               </p>

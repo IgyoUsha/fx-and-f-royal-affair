@@ -1,8 +1,18 @@
-
-import { Quote, Crown, Heart } from "lucide-react";
+import { Quote, Crown, Heart, ChevronDown, ChevronUp } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { useState } from "react";
 
 const Testimonials = () => {
+  const [expandedCards, setExpandedCards] = useState<{[key: string]: boolean}>({});
+
+  const toggleExpanded = (cardId: string) => {
+    setExpandedCards(prev => ({
+      ...prev,
+      [cardId]: !prev[cardId]
+    }));
+  };
+
   return (
     <div className="container mx-auto px-4">
       <div className="text-center mb-12">
@@ -40,14 +50,42 @@ const Testimonials = () => {
             <div className="text-gray-700 leading-relaxed space-y-4">
               <p>
                 I've known Fater for years, and I've never seen him as happy as he is with Fxentso. 
-                She brings out the best in him, and their love is truly inspiring to witness. What I 
-                admire most is how their relationship is built on a foundation of faith and mutual respect.
+                She brings out the best in him, and their love is truly inspiring to witness.
               </p>
-              <p>
-                Watching their relationship grow has been like watching a beautiful story unfold. 
-                They complement each other perfectly - where one is strong, the other is supportive, 
-                and together they're unstoppable. Their love for God shines through everything they do.
-              </p>
+              
+              {expandedCards['isaac'] && (
+                <>
+                  <p>
+                    What I admire most is how their relationship is built on a foundation of faith and mutual respect.
+                    Watching their relationship grow has been like watching a beautiful story unfold. 
+                    They complement each other perfectly - where one is strong, the other is supportive, 
+                    and together they're unstoppable.
+                  </p>
+                  <p>
+                    Their love for God shines through everything they do.
+                  </p>
+                </>
+              )}
+              
+              <Button
+                variant="ghost"
+                size="sm"
+                onClick={() => toggleExpanded('isaac')}
+                className="text-teal-600 hover:text-teal-700 p-0 h-auto font-normal"
+              >
+                {expandedCards['isaac'] ? (
+                  <>
+                    <ChevronUp size={16} className="mr-1" />
+                    Read Less
+                  </>
+                ) : (
+                  <>
+                    <ChevronDown size={16} className="mr-1" />
+                    Read More
+                  </>
+                )}
+              </Button>
+              
               <p className="italic text-teal-700 font-medium text-lg">
                 "Fater and Fxentso, your love story gives us all hope. May God continue to bless your union!"
               </p>
@@ -81,14 +119,39 @@ const Testimonials = () => {
             <div className="text-gray-700 leading-relaxed space-y-4">
               <p>
                 Fxentso has always been someone special, but since meeting Fater, she's been absolutely 
-                radiant. The way they look at each other, support each other, and laugh together 
-                shows a love that's rooted in faith and meant to last forever.
+                radiant. The way they look at each other shows a love that's rooted in faith.
               </p>
-              <p>
-                As her closest friend, I've had a front-row seat to their beautiful love story. 
-                From their first meeting stories to watching their relationship blossom in God's timing, 
-                every moment has been filled with pure joy and genuine connection.
-              </p>
+              
+              {expandedCards['setemi'] && (
+                <>
+                  <p>
+                    Support each other, and laugh together shows a love that's rooted in faith and meant to last forever.
+                    As her closest friend, I've had a front-row seat to their beautiful love story. 
+                    From their first meeting stories to watching their relationship blossom in God's timing, 
+                    every moment has been filled with pure joy and genuine connection.
+                  </p>
+                </>
+              )}
+              
+              <Button
+                variant="ghost"
+                size="sm"
+                onClick={() => toggleExpanded('setemi')}
+                className="text-yellow-600 hover:text-yellow-700 p-0 h-auto font-normal"
+              >
+                {expandedCards['setemi'] ? (
+                  <>
+                    <ChevronUp size={16} className="mr-1" />
+                    Read Less
+                  </>
+                ) : (
+                  <>
+                    <ChevronDown size={16} className="mr-1" />
+                    Read More
+                  </>
+                )}
+              </Button>
+              
               <p className="italic text-yellow-700 font-medium text-lg">
                 "Fxentso and Fater, you two are perfect together. May your marriage be blessed and filled with God's love!"
               </p>
