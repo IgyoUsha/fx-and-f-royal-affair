@@ -56,7 +56,7 @@ const BusinessSection = () => {
 
             <Button 
               className="bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white px-6 py-3 rounded-full shadow-lg hover:shadow-xl transition-all transform hover:scale-105"
-              onClick={() => window.open('https://guidetryb.com/', '_blank')}
+              onClick={() => window.open('https://linktr.ee/guidetryb?utm_source=linktree_profile_share&ltsid=2ef777fe-3e69-4f6a-84db-c501861fde21', '_blank')}
             >
               Visit Guidetryb
               <ExternalLink className="ml-2" size={16} />
@@ -64,18 +64,18 @@ const BusinessSection = () => {
           </CardContent>
         </Card>
 
-        {/* Abba's Dwelling */}
+        {/* ABBA's Dwelling */}
         <Card className="bg-gradient-to-br from-green-50 to-white border-green-200 shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
           <CardContent className="p-8 text-center">
             <div className="w-20 h-20 mx-auto mb-6 rounded-2xl overflow-hidden">
               <img 
                 src="/lovable-uploads/645a9b3e-ab5e-44f8-ba21-88227c0bcf6d.png" 
-                alt="Abba's Dwelling Logo" 
+                alt="ABBA's Dwelling Logo" 
                 className="w-full h-full object-cover"
               />
             </div>
             
-            <h3 className="text-3xl font-bold text-gray-800 mb-4">Abba's Dwelling</h3>
+            <h3 className="text-3xl font-bold text-gray-800 mb-4">ABBA's Dwelling</h3>
             
             <p className="text-gray-600 text-lg leading-relaxed mb-6">
               A Christian blog dedicated to inspiring and encouraging young people in their faith journey. 
@@ -101,7 +101,7 @@ const BusinessSection = () => {
               className="bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white px-6 py-3 rounded-full shadow-lg hover:shadow-xl transition-all transform hover:scale-105"
               onClick={() => window.open('https://abbasdwelling.com/', '_blank')}
             >
-              Visit Abba's Dwelling
+              Visit ABBA's Dwelling
               <ExternalLink className="ml-2" size={16} />
             </Button>
           </CardContent>

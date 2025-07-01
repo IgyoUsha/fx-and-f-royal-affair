@@ -24,7 +24,7 @@ const Navigation = ({ onNavigate }: NavigationProps) => {
     { label: "Gallery", id: "gallery" },
     { label: "RSVP", id: "rsvp" },
     { label: "Guidetryb", url: "https://linktr.ee/guidetryb?utm_source=linktree_profile_share&ltsid=2ef777fe-3e69-4f6a-84db-c501861fde21" },
-    { label: "Abba's Dwelling", url: "https://abbasdwelling.com/" }
+    { label: "ABBA's Dwelling", url: "https://abbasdwelling.com/" }
   ];
 
   const handleNavigation = (item: NavigationItem) => {
