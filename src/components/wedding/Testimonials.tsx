@@ -49,20 +49,19 @@ const Testimonials = () => {
             <Quote className="text-teal-300 mb-4" size={32} />
             <div className="text-gray-700 leading-relaxed space-y-4">
               <p>
-                I've known Fater for years, and I've never seen him as happy as he is with Fxentso. 
-                She brings out the best in him, and their love is truly inspiring to witness.
+                During undergrad, we used to joke that Fater always followed me wherever I went (or I always followed him). We met in Calvary Arrows as students in JSS1. Though we went to different universities in Nigeria initially, God brought us together again when we both received scholarships to study in the same university and program in Russia.
               </p>
               
               {expandedCards['isaac'] && (
                 <>
                   <p>
-                    What I admire most is how their relationship is built on a foundation of faith and mutual respect.
-                    Watching their relationship grow has been like watching a beautiful story unfold. 
-                    They complement each other perfectly - where one is strong, the other is supportive, 
-                    and together they're unstoppable.
+                    There, we became classmates and roommates throughout our undergraduate years. Over time, we moved from being strangers to friends—and now, brothers. I met Fxentso for the first time at a Students for Christ (SFC) Winter Camp some years ago in Russia. I remember the excitement of meeting someone from my part of Nigeria - it felt like a rare treasure.
                   </p>
                   <p>
-                    Their love for God shines through everything they do.
+                    We've seen a lot. From naive days in secondary school, through culture shock and cold winters in a new country, we've grown, learned, and adapted together. I still faintly remember a dream I had over eight years ago about your wedding. I shared it with you back then, not knowing what or when it meant. But seeing it come to pass today fills me with joy.
+                  </p>
+                  <p>
+                    You have found a good thing—and more than that, you've found God's favour. I rejoice with you for this answered prayer. May your marriage reflect His heart, full of grace, selflessness, purpose, joy, peace, and light.
                   </p>
                 </>
               )}
@@ -87,7 +86,7 @@ const Testimonials = () => {
               </Button>
               
               <p className="italic text-teal-700 font-medium text-lg">
-                "Fater and Fxentso, your love story gives us all hope. May God continue to bless your union!"
+                "Arise, shine, for your light has come, and the glory of the Lord rises upon you. That it will arise and shine — a light to the world, fulfilling God's purpose, radiating His glory."
               </p>
             </div>
             
@@ -118,17 +117,19 @@ const Testimonials = () => {
             <Quote className="text-yellow-300 mb-4" size={32} />
             <div className="text-gray-700 leading-relaxed space-y-4">
               <p>
-                Fxentso has always been someone special, but since meeting Fater, she's been absolutely 
-                radiant. The way they look at each other shows a love that's rooted in faith.
+                I don't know if you've ever come across this quote or meme before: "That one person that comes into your life in the most random way but has now become the most important part of it." Yes, that person for me is Fxentso — or "Fx," as I like to call her😊.
               </p>
               
               {expandedCards['setemi'] && (
                 <>
                   <p>
-                    Support each other, and laugh together shows a love that's rooted in faith and meant to last forever.
-                    As her closest friend, I've had a front-row seat to their beautiful love story. 
-                    From their first meeting stories to watching their relationship blossom in God's timing, 
-                    every moment has been filled with pure joy and genuine connection.
+                    I met Fx in Russia, the winter of 2018, with absolutely no prior knowledge of her. We were in the same school and lived in the same hostel for our Russian language preparatory course. Less frequent chats became more frequent ones. A few minutes of phone calls turned into hours of chitchats, laughter, banter, deep and spiritual conversations.
+                  </p>
+                  <p>
+                    She became my safe space, my confidant — and I, hers. You know one thing I love about Fx? She always says she's proud of me. Oh, how those words melt my heart every time! When I finally found out that she was taken (Brother Fater pulled a fast one on me — but I forgive him), I was overjoyed, elated, ecstatic… pleasantly surprised and delighted😁.
+                  </p>
+                  <p>
+                    I am very confident that this is a kingdom marriage — not just because two Christians are getting married, but also because this union is by divine will and will fulfill divine mandate.
                   </p>
                 </>
               )}
@@ -153,7 +154,7 @@ const Testimonials = () => {
               </Button>
               
               <p className="italic text-yellow-700 font-medium text-lg">
-                "Fxentso and Fater, you two are perfect together. May your marriage be blessed and filled with God's love!"
+                "I pray for you both, Fx and Brother Fater, and I pray for your future home — that the love of Christ will keep, guard, and lead you in all your ways. At the end of your lives, after many years, your lives and marriage will be a testimony of God's faithfulness."
               </p>
             </div>
             
