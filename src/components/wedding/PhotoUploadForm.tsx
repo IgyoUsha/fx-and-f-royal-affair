@@ -28,8 +28,8 @@ const PhotoUploadForm = ({ onPhotosUploaded }: PhotoUploadFormProps) => {
       return;
     }
 
-    // Open Google Drive folder in a new tab
-    window.open("https://drive.google.com/drive/folders/1sUBAXQnjAghWcTfHGXtuwgPfoR0KGNl_", "_blank");
+    // Open Google Forms in a new tab
+    window.open("https://forms.gle/Zg3x9epPaD6HGd6f6", "_blank");
     
     toast({
       title: "Redirecting to Photo Upload",
