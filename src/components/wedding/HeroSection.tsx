@@ -8,9 +8,11 @@ const HeroSection = () => {
   
   // Using your uploaded images
   const heroImages = [
-    "/lovable-uploads/028acff6-84b7-448a-be26-7887fbee9497.png",
-    "/lovable-uploads/4fdca408-24b8-4ef7-9838-b2698afb6fd3.png",
-    "/lovable-uploads/f2376d1c-9a64-4d79-8aca-db6041a7acdf.png"
+    "/lovable-uploads/795078d1-6bdd-4744-84b9-5983cef7cc31.png",
+    "/lovable-uploads/610e01e1-81ad-44ed-ba0b-57a6fcaf69bd.png",
+    "/lovable-uploads/aecb12ce-c84d-4300-901a-ada6cd10a478.png",
+    "/lovable-uploads/1e1bfec1-bf05-4d5a-a515-b28a8f5600b1.png",
+    "/lovable-uploads/af7fdb57-2455-409e-8a02-1c5a36ef46d5.png"
   ];
 
   useEffect(() => {

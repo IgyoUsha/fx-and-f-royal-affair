@@ -48,6 +48,22 @@ const PhotoGallery = () => {
     { 
       src: "/lovable-uploads/d9a8a524-8fee-48a9-b498-277048fbb28c.png", 
       caption: "Royal celebration moments" 
+    },
+    { 
+      src: "/lovable-uploads/7c305c1f-393e-4a86-9254-177aadc8e079.png", 
+      caption: "Traditional elegance" 
+    },
+    { 
+      src: "/lovable-uploads/82a0998e-39e1-4bd9-be98-cc97f2b28592.png", 
+      caption: "Joyful embrace" 
+    },
+    { 
+      src: "/lovable-uploads/377a7e9f-4274-4769-8dd9-0c9700c8931e.png", 
+      caption: "Formal moments" 
+    },
+    { 
+      src: "/lovable-uploads/3a7a9132-ff10-4fae-b145-fb422f4a4cf6.png", 
+      caption: "Elegant celebration" 
     }
   ];
 
