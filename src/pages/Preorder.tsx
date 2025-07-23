@@ -89,10 +89,42 @@ const Preorder = () => {
       return;
     }
 
-    toast({
-      title: "Coming Soon!",
-      description: "Paystack integration will be available soon. Thank you for your interest!",
+    // Initialize Paystack payment
+    const handler = (window as any).PaystackPop.setup({
+      key: 'pk_test_fc67eb0140afbf9895a101e51876ef27436f9311',
+      email: 'customer@email.com', // This should be collected from user
+      amount: getTotalPrice() * 100, // Paystack expects amount in kobo
+      currency: 'NGN',
+      ref: 'WED_' + Math.floor((Math.random() * 1000000000) + 1),
+      metadata: {
+        custom_fields: [
+          {
+            display_name: "Items",
+            variable_name: "items",
+            value: Object.entries(cart).map(([itemId, quantity]) => {
+              const product = merchItems.find(p => p.id === itemId);
+              return `${product?.name} x ${quantity}`;
+            }).join(', ')
+          }
+        ]
+      },
+      callback: function(response: any) {
+        toast({
+          title: "Payment successful!",
+          description: `Your preorder has been confirmed. Reference: ${response.reference}`,
+        });
+        // Clear cart after successful payment
+        setCart({});
+      },
+      onClose: function() {
+        toast({
+          title: "Payment cancelled",
+          description: "You can continue shopping and try again.",
+        });
+      }
     });
+
+    handler.openIframe();
   };
 
   return (
