@@ -23,12 +23,17 @@ const Navigation = ({ onNavigate }: NavigationProps) => {
     { label: "Wedding Party", id: "party" },
     { label: "Gallery", id: "gallery" },
     { label: "RSVP", id: "rsvp" },
+    { label: "Preorder", url: "/preorder" },
     { label: "Guidetryb", url: "https://linktr.ee/guidetryb?utm_source=linktree_profile_share&ltsid=2ef777fe-3e69-4f6a-84db-c501861fde21" },
     { label: "ABBA's Dwelling", url: "https://abbasdwelling.com/" }
   ];
 
   const handleNavigation = (item: NavigationItem) => {
-    onNavigate(item);
+    if (item.url && item.url.startsWith('/')) {
+      window.location.href = item.url;
+    } else {
+      onNavigate(item);
+    }
     setIsMenuOpen(false);
   };
 

@@ -67,7 +67,7 @@ const HeroSection = () => {
       </button>
 
       {/* Hero Content */}
-      <div className="relative z-10 flex items-center justify-center h-full text-center text-white px-4">
+      <div className="relative z-10 flex items-center justify-center h-full text-center text-white px-4 pt-20">
         <div className="max-w-4xl animate-fade-in">
           {/* Royal Crown */}
           <div className="flex justify-center mb-6">
