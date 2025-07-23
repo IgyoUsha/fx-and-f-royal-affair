@@ -103,25 +103,25 @@ const PhotoGallery = () => {
         </p>
       </div>
 
-      {/* Photo Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
+      {/* Photo Grid - Mobile First with Compact Layout */}
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-2 sm:gap-4 max-w-7xl mx-auto">
         {galleryPhotos.map((photo, index) => (
           <Card 
             key={index} 
-            className="group cursor-pointer overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:scale-105"
+            className="group cursor-pointer overflow-hidden hover:shadow-lg transition-all duration-300 transform hover:scale-105 aspect-square"
             onClick={() => openModal(index)}
           >
-            <CardContent className="p-0 relative">
+            <CardContent className="p-0 relative h-full">
               <img 
                 src={photo.src} 
                 alt={photo.caption}
-                className="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110"
+                className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
-                <p className="text-white p-4 font-medium">{photo.caption}</p>
+                <p className="text-white p-2 text-xs sm:text-sm font-medium leading-tight">{photo.caption}</p>
               </div>
-              <div className="absolute top-4 right-4 bg-white/20 backdrop-blur-sm p-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <Camera className="text-white" size={16} />
+              <div className="absolute top-2 right-2 bg-white/20 backdrop-blur-sm p-1.5 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <Camera className="text-white" size={12} />
               </div>
             </CardContent>
           </Card>
