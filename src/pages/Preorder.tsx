@@ -110,8 +110,9 @@ const Preorder = () => {
       },
       callback: function(response: any) {
         toast({
-          title: "Payment successful!",
-          description: `Your preorder has been confirmed. Reference: ${response.reference}`,
+          title: "Payment successful! 🎉",
+          description: `Thank you for your order! Your invoice will be emailed to you shortly. Reference: ${response.reference}`,
+          duration: 10000,
         });
         // Clear cart after successful payment
         setCart({});
@@ -274,6 +275,28 @@ const Preorder = () => {
             </Card>
           </div>
         </section>
+      )}
+
+      {/* Floating Checkout Button */}
+      {getTotalItems() > 0 && (
+        <div className="fixed bottom-6 right-6 z-50">
+          <div className="bg-white rounded-full shadow-lg border border-purple-200 p-1">
+            <Button 
+              onClick={handlePreorder}
+              className="bg-gradient-to-r from-purple-500 to-purple-600 hover:from-purple-600 hover:to-purple-700 text-white rounded-full px-6 py-3 shadow-lg hover:shadow-xl transition-all duration-300 flex items-center space-x-3 text-lg font-semibold"
+              size="lg"
+            >
+              <ShoppingCart size={24} />
+              <div className="flex flex-col items-start">
+                <span className="text-sm font-normal opacity-90">Checkout</span>
+                <span className="text-white font-bold">₦{getTotalPrice().toLocaleString()}</span>
+              </div>
+              <div className="bg-white/20 rounded-full px-2 py-1 text-sm font-bold">
+                {getTotalItems()}
+              </div>
+            </Button>
+          </div>
+        </div>
       )}
 
       {/* Footer */}
