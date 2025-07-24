@@ -24,7 +24,7 @@ const Preorder = () => {
       name: "Guidetryb Cap",
       price: 3000,
       image: "/lovable-uploads/7f3c8e1c-848b-4876-ac71-1cef4ce1d3ac.png",
-      description: "Premium black cap with printed Guidetryb logo. Perfect for professionals and go-getters.",
+      description: "Premium black cap with printed Guidetryb logo. Perfect for you.",
       category: "Accessories"
     },
     {
@@ -40,7 +40,7 @@ const Preorder = () => {
       name: "Guidetryb T-Shirt",
       price: 6000,
       image: "/lovable-uploads/190b46a0-effc-49fb-95a0-fdb17b0170a2.png",
-      description: "Premium black cotton t-shirt featuring the Guidetryb logo. Perfect for career mentorship enthusiasts.",
+      description: "Premium black cotton t-shirt featuring the Guidetryb logo. Perfect for you.",
       category: "Apparel"
     }
   ];
