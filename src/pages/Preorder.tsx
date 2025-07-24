@@ -36,11 +36,11 @@ const Preorder = () => {
       category: "Apparel"
     },
     {
-      id: "abba-tshirt-2",
-      name: "ABBA's Dwelling T-Shirt (Premium)",
+      id: "guidetryb-tshirt",
+      name: "Guidetryb T-Shirt",
       price: 6000,
-      image: "/lovable-uploads/874a64c0-57f1-4603-8332-00001c5d04ba.png",
-      description: "Premium white cotton t-shirt with high-quality ABBA's Dwelling branding.",
+      image: "/lovable-uploads/190b46a0-effc-49fb-95a0-fdb17b0170a2.png",
+      description: "Premium black cotton t-shirt featuring the Guidetryb logo. Perfect for career mentorship enthusiasts.",
       category: "Apparel"
     }
   ];
