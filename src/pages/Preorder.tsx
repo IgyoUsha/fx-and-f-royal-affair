@@ -24,7 +24,7 @@ const Preorder = () => {
       name: "Guidetryb Cap",
       price: 3000,
       image: "/lovable-uploads/7f3c8e1c-848b-4876-ac71-1cef4ce1d3ac.png",
-      description: "Premium black cap with embroidered Guidetryb logo. Perfect for mentorship enthusiasts.",
+      description: "Premium black cap with printed Guidetryb logo. Perfect for professionals and go-getters.",
       category: "Accessories"
     },
     {
