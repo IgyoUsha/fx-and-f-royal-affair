@@ -18,7 +18,7 @@ const HeroSection = () => {
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % heroImages.length);
-    }, 7000); // Slower, more subtle timing
+    }, 4000);
     return () => clearInterval(timer);
   }, [heroImages.length]);
 
@@ -37,7 +37,7 @@ const HeroSection = () => {
         {heroImages.map((image, index) => (
           <div
             key={index}
-            className={`absolute inset-0 transition-opacity duration-[2500ms] ease-in-out ${
+            className={`absolute inset-0 transition-opacity duration-1000 ${
               index === currentSlide ? "opacity-100" : "opacity-0"
             }`}
           >
