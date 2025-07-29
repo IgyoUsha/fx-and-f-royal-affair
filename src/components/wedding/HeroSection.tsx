@@ -99,6 +99,12 @@ const HeroSection = () => {
           <Button 
             size="lg" 
             className="bg-gradient-to-r from-teal-500 to-teal-600 hover:from-teal-600 hover:to-teal-700 text-white px-8 py-3 text-lg font-semibold rounded-full shadow-lg hover:shadow-xl transition-all transform hover:scale-105"
+            onClick={() => {
+              const rsvpSection = document.getElementById('rsvp');
+              if (rsvpSection) {
+                rsvpSection.scrollIntoView({ behavior: 'smooth' });
+              }
+            }}
           >
             Join Our Celebration
           </Button>

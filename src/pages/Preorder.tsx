@@ -1,9 +1,10 @@
 import { useState } from "react";
-import { ArrowLeft, ShoppingCart, Star } from "lucide-react";
-import { Card, CardContent } from "@/components/ui/card";
+import { ArrowLeft, ShoppingCart, Star, Copy, Check } from "lucide-react";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { useToast } from "@/hooks/use-toast";
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 
 interface MerchItem {
   id: string;
@@ -89,43 +90,17 @@ const Preorder = () => {
       return;
     }
 
-    // Initialize Paystack payment
-    const handler = (window as any).PaystackPop.setup({
-      key: 'pk_test_fc67eb0140afbf9895a101e51876ef27436f9311',
-      email: 'customer@email.com', // This should be collected from user
-      amount: getTotalPrice() * 100, // Paystack expects amount in kobo
-      currency: 'NGN',
-      ref: 'WED_' + Math.floor((Math.random() * 1000000000) + 1),
-      metadata: {
-        custom_fields: [
-          {
-            display_name: "Items",
-            variable_name: "items",
-            value: Object.entries(cart).map(([itemId, quantity]) => {
-              const product = merchItems.find(p => p.id === itemId);
-              return `${product?.name} x ${quantity}`;
-            }).join(', ')
-          }
-        ]
-      },
-      callback: function(response: any) {
-        toast({
-          title: "Payment successful! 🎉",
-          description: `Thank you for your order! Your invoice will be emailed to you shortly. Reference: ${response.reference}`,
-          duration: 10000,
-        });
-        // Clear cart after successful payment
-        setCart({});
-      },
-      onClose: function() {
-        toast({
-          title: "Payment cancelled",
-          description: "You can continue shopping and try again.",
-        });
-      }
-    });
+    setShowPaymentDetails(true);
+  };
 
-    handler.openIframe();
+  const [showPaymentDetails, setShowPaymentDetails] = useState(false);
+
+  const copyToClipboard = (text: string) => {
+    navigator.clipboard.writeText(text);
+    toast({
+      title: "Copied to clipboard!",
+      description: "Account details copied successfully.",
+    });
   };
 
   return (
@@ -298,6 +273,99 @@ const Preorder = () => {
           </div>
         </div>
       )}
+
+      {/* Payment Details Dialog */}
+      <Dialog open={showPaymentDetails} onOpenChange={setShowPaymentDetails}>
+        <DialogContent className="max-w-md">
+          <DialogHeader>
+            <DialogTitle className="text-center">Complete Your Payment</DialogTitle>
+          </DialogHeader>
+          
+          <div className="space-y-4">
+            <div className="bg-purple-50 p-4 rounded-lg">
+              <h4 className="font-semibold text-purple-800 mb-2">Order Summary</h4>
+              <div className="space-y-1 text-sm">
+                {Object.entries(cart).map(([itemId, quantity]) => {
+                  const item = merchItems.find(m => m.id === itemId);
+                  return (
+                    <div key={itemId} className="flex justify-between">
+                      <span>{item?.name} x {quantity}</span>
+                      <span>₦{item ? (item.price * quantity).toLocaleString() : 0}</span>
+                    </div>
+                  );
+                })}
+                <div className="border-t pt-1 font-semibold flex justify-between">
+                  <span>Total</span>
+                  <span>₦{getTotalPrice().toLocaleString()}</span>
+                </div>
+              </div>
+            </div>
+
+            <Card>
+              <CardHeader>
+                <CardTitle className="text-lg">Bank Transfer Details</CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-3">
+                <div className="flex justify-between items-center p-2 bg-gray-50 rounded">
+                  <div>
+                    <p className="text-sm text-gray-600">Account Number</p>
+                    <p className="font-semibold">1162186429</p>
+                  </div>
+                  <Button size="sm" variant="outline" onClick={() => copyToClipboard('1162186429')}>
+                    <Copy size={14} />
+                  </Button>
+                </div>
+                
+                <div className="flex justify-between items-center p-2 bg-gray-50 rounded">
+                  <div>
+                    <p className="text-sm text-gray-600">Bank Name</p>
+                    <p className="font-semibold">Paga</p>
+                  </div>
+                  <Button size="sm" variant="outline" onClick={() => copyToClipboard('Paga')}>
+                    <Copy size={14} />
+                  </Button>
+                </div>
+                
+                <div className="flex justify-between items-center p-2 bg-gray-50 rounded">
+                  <div>
+                    <p className="text-sm text-gray-600">Account Name</p>
+                    <p className="font-semibold text-xs">Lemonade Technology Limited- FATER Akuhwa</p>
+                  </div>
+                  <Button size="sm" variant="outline" onClick={() => copyToClipboard('Lemonade Technology Limited- FATER Akuhwa')}>
+                    <Copy size={14} />
+                  </Button>
+                </div>
+              </CardContent>
+            </Card>
+
+            <div className="bg-teal-50 p-4 rounded-lg">
+              <h4 className="font-semibold text-teal-800 mb-2">Next Steps:</h4>
+              <ol className="text-sm text-teal-700 space-y-1 list-decimal list-inside">
+                <li>Transfer ₦{getTotalPrice().toLocaleString()} to the account above</li>
+                <li>Take a screenshot of your payment receipt</li>
+                <li>Send proof of payment to WhatsApp: [WhatsApp number to be provided]</li>
+                <li>Include your name and order details in the message</li>
+              </ol>
+            </div>
+
+            <Button 
+              onClick={() => {
+                setShowPaymentDetails(false);
+                setCart({});
+                toast({
+                  title: "Order confirmed! 🎉",
+                  description: "Please complete the bank transfer and send proof of payment to our WhatsApp number.",
+                  duration: 10000,
+                });
+              }}
+              className="w-full bg-gradient-to-r from-purple-500 to-purple-600 hover:from-purple-600 hover:to-purple-700"
+            >
+              <Check className="mr-2" size={16} />
+              I've Made the Transfer
+            </Button>
+          </div>
+        </DialogContent>
+      </Dialog>
 
       {/* Footer */}
       <footer className="bg-gray-900 text-white py-8 mt-16">

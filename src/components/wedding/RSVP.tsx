@@ -258,7 +258,7 @@ const RSVP = () => {
                   <div>
                     <h4 className="font-semibold text-gray-800">Dress Code</h4>
                     <p className="text-gray-600">Royal Formal</p>
-                    <p className="text-gray-600">Colors: Turquoise, White, Gold</p>
+                    <p className="text-gray-600">Colors: Royal blue, Purple, Gold</p>
                   </div>
                 </div>
               </div>
@@ -277,7 +277,7 @@ const RSVP = () => {
                   <Mail className="text-teal-600" size={20} />
                   <div>
                     <p className="font-semibold text-gray-800">Email</p>
-                    <p className="text-gray-600">wedding@fxandf.com</p>
+                    <p className="text-gray-600">fx.fater@gmail.com</p>
                   </div>
                 </div>
 
