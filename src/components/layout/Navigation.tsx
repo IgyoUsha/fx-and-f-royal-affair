@@ -44,7 +44,7 @@ const Navigation = ({ onNavigate }: NavigationProps) => {
           {/* Logo and Theme Scripture */}
           <div className="flex items-center space-x-4">
             <img 
-              src="/lovable-uploads/8f3085f7-31c1-4590-8ed5-283d6911da50.png" 
+              src="/lovable-uploads/1c6db4fe-7884-4140-a5e9-1d870cd20db2.png" 
               alt="F&F Wedding Logo" 
               className="h-12 w-auto"
             />
@@ -85,7 +85,7 @@ const Navigation = ({ onNavigate }: NavigationProps) => {
                 <div className="text-center">
                   <div className="flex items-center justify-center mb-2">
                     <img 
-                      src="/lovable-uploads/8f3085f7-31c1-4590-8ed5-283d6911da50.png" 
+                      src="/lovable-uploads/1c6db4fe-7884-4140-a5e9-1d870cd20db2.png" 
                       alt="F&F Wedding Logo" 
                       className="h-10 w-auto"
                     />
