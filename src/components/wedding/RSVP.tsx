@@ -281,13 +281,6 @@ const RSVP = () => {
                   </div>
                 </div>
 
-                <div className="flex items-center space-x-4">
-                  <Phone className="text-teal-600" size={20} />
-                  <div>
-                    <p className="font-semibold text-gray-800">Phone</p>
-                    <p className="text-gray-600">+1 (555) 123-4567</p>
-                  </div>
-                </div>
               </div>
 
               <div className="mt-6 p-4 bg-teal-50 rounded-lg">

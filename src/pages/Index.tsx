@@ -19,6 +19,7 @@ import AdminDashboard from "@/components/admin/AdminDashboard";
 import Navigation from "@/components/layout/Navigation";
 import Footer from "@/components/layout/Footer";
 import MerchandisePopup from "@/components/wedding/MerchandisePopup";
+import ScrollToTop from "@/components/ui/scroll-to-top";
 
 const Index = () => {
   const [showAdminLogin, setShowAdminLogin] = useState(false);
@@ -26,13 +27,13 @@ const Index = () => {
   const [showMerchandisePopup, setShowMerchandisePopup] = useState(false);
 
   useEffect(() => {
-    // Show merchandise popup after 5 seconds, only if not shown in this session
+    // Show merchandise popup after 20 seconds, only if not shown in this session
     const hasShownPopup = sessionStorage.getItem('merchandisePopupShown');
     if (!hasShownPopup) {
       const timer = setTimeout(() => {
         setShowMerchandisePopup(true);
         sessionStorage.setItem('merchandisePopupShown', 'true');
-      }, 5000);
+      }, 20000);
       return () => clearTimeout(timer);
     }
   }, []);
@@ -131,6 +132,9 @@ const Index = () => {
       {showMerchandisePopup && (
         <MerchandisePopup onClose={() => setShowMerchandisePopup(false)} />
       )}
+      
+      {/* Scroll to Top Button */}
+      <ScrollToTop />
     </div>
   );
 };
