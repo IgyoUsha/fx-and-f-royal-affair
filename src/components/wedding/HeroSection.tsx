@@ -1,6 +1,6 @@
 
 import { useState, useEffect } from "react";
-import { ChevronLeft, ChevronRight, Heart, Crown } from "lucide-react";
+import { ChevronLeft, ChevronRight, Heart, Crown, Calendar, MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const HeroSection = () => {
@@ -92,8 +92,14 @@ const HeroSection = () => {
           </p>
           
           <div className="text-lg md:text-xl mb-8">
-            <p className="mb-2">📅 Saturday, August 16th, 2025</p>
-            <p>📍 Makurdi, Nigeria</p>
+            <p className="mb-2 flex items-center justify-center gap-2">
+              <Calendar className="text-teal-300" size={20} />
+              Saturday, August 16th, 2025
+            </p>
+            <p className="flex items-center justify-center gap-2">
+              <MapPin className="text-teal-300" size={20} />
+              Makurdi, Nigeria
+            </p>
           </div>
 
           <Button 
