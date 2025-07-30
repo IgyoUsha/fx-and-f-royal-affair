@@ -12,7 +12,7 @@ const Footer = ({ onAdminClick }: FooterProps) => {
       <div className="container mx-auto px-4 text-center">
         <div className="flex justify-center items-center mb-4">
           <img 
-            src="/lovable-uploads/1c6db4fe-7884-4140-a5e9-1d870cd20db2.png" 
+            src="/lovable-uploads/703d9a0e-6543-40ae-9aaf-a52497b6a4dc.png" 
             alt="F&F Wedding Logo" 
             className="h-16 w-auto"
           />
