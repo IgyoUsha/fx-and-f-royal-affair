@@ -284,7 +284,7 @@ const RSVP = () => {
 
               <div className="mt-6 p-4 bg-teal-50 rounded-lg">
                 <p className="text-sm text-gray-600 text-center">
-                  Please RSVP by [RSVP Date] to help us plan accordingly
+                  Please RSVP by 14th August to help us plan accordingly
                 </p>
               </div>
             </CardContent>
