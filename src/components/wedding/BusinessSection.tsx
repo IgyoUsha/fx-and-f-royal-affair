@@ -99,7 +99,7 @@ const BusinessSection = () => {
 
             <Button 
               className="bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white px-6 py-3 rounded-full shadow-lg hover:shadow-xl transition-all transform hover:scale-105"
-              onClick={() => window.open('https://abbasdwelling.com/', '_blank')}
+              onClick={() => window.open('https://abbasdwelling.com/blog', '_blank')}
             >
               Visit ABBA's Dwelling
               <ExternalLink className="ml-2" size={16} />

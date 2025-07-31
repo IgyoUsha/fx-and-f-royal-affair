@@ -9,7 +9,7 @@ const WeddingParty = () => {
 
   const groomsmen = [
     { name: "Isaac", role: "Best Man", isBest: true, photo: "/lovable-uploads/7e27994f-cc9b-4f19-8703-67537198687c.png" },
-    { name: "Martin-Luther", role: "Groomsman", photo: "/lovable-uploads/1c7244ae-3421-43bc-837c-12c0e23298fb.png" },
+    { name: "Martin-Luther", role: "Groomsman" },
     { name: "Joshua", role: "Groomsman", photo: "/lovable-uploads/67c94167-3305-4348-a035-d9a96c9855cf.png" },
     { name: "Ife", role: "Groomsman", photo: "/lovable-uploads/30c85af1-5a86-42e2-9c04-0b848f1b8035.png" },
     { name: "Usha", role: "Groomsman", photo: "/lovable-uploads/50baff41-b0b2-4498-abb8-b9752de0fd90.png" },
@@ -19,7 +19,7 @@ const WeddingParty = () => {
   const bridesmaids = [
     { name: "Setemi", role: "Chief Bridesmaid", isBest: true, photo: "/lovable-uploads/c26c3024-d193-4635-b009-768d998db18e.png" },
     { name: "Iwuese", role: "Bridesmaid", photo: "/lovable-uploads/f412be39-7f27-4547-a90c-dc309450ffdc.png" },
-    { name: "Kwaghdoobee", role: "Bridesmaid", photo: "/lovable-uploads/3302a681-d4c1-4da1-a4f3-513267a3377e.png" },
+    
     { name: "Christabel", role: "Bridesmaid", photo: "/lovable-uploads/8a367c9f-1c9c-4a93-b35d-e53be9b71dc8.png" },
     { name: "Gracious", role: "Bridesmaid", photo: "/lovable-uploads/86b2ef11-76f5-49a3-b808-9229112a5c34.png" },
     { name: "Michelle", role: "Bridesmaid", photo: "/lovable-uploads/4512a360-7bd4-46c5-9c36-b722d7cd5ab1.png" }

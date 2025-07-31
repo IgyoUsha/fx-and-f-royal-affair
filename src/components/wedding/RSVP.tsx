@@ -238,8 +238,8 @@ const RSVP = () => {
                   <div>
                     <h4 className="font-semibold text-gray-800">Date & Time</h4>
                     <p className="text-gray-600">Saturday, August 16th, 2025</p>
-                    <p className="text-gray-600">Ceremony: [Time]</p>
-                    <p className="text-gray-600">Reception: [Time]</p>
+                    <p className="text-gray-600">Solemnization: 9:00am</p>
+                    <p className="text-gray-600">Reception: to be announced</p>
                   </div>
                 </div>
 
@@ -247,9 +247,8 @@ const RSVP = () => {
                   <MapPin className="text-teal-600 mt-1" size={20} />
                   <div>
                     <h4 className="font-semibold text-gray-800">Venue</h4>
+                    <p className="text-gray-600">The Good News Chapel, BSU Makurdi</p>
                     <p className="text-gray-600">Makurdi, Nigeria</p>
-                    <p className="text-gray-600">[Venue Address]</p>
-                    <p className="text-gray-600">[City, State]</p>
                   </div>
                 </div>
 

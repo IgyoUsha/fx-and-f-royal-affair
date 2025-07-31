@@ -98,7 +98,7 @@ const HeroSection = () => {
             </p>
             <p className="flex items-center justify-center gap-2">
               <MapPin className="text-teal-300" size={20} />
-              Makurdi, Nigeria
+              The Good News Chapel, BSU Makurdi
             </p>
           </div>
 
