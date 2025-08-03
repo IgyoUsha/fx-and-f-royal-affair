@@ -9,7 +9,7 @@ const WeddingParty = () => {
 
   const groomsmen = [
     { name: "Isaac", role: "Best Man", isBest: true, photo: "/lovable-uploads/7e27994f-cc9b-4f19-8703-67537198687c.png" },
-    { name: "Martin-Luther", role: "Groomsman" },
+    { name: "Martin-Luther", role: "Groomsman", photo: "/lovable-uploads/305a371a-5cd0-4d5f-be1d-b129a34bdc70.png" },
     { name: "Joshua", role: "Groomsman", photo: "/lovable-uploads/67c94167-3305-4348-a035-d9a96c9855cf.png" },
     { name: "Ife", role: "Groomsman", photo: "/lovable-uploads/30c85af1-5a86-42e2-9c04-0b848f1b8035.png" },
     { name: "Usha", role: "Groomsman", photo: "/lovable-uploads/50baff41-b0b2-4498-abb8-b9752de0fd90.png" },
