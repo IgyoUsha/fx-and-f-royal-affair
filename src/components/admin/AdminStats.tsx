@@ -6,13 +6,13 @@ interface RSVPData {
   id: string;
   name: string;
   email: string;
-  phone: string;
-  attendance: string;
-  guestCount: string;
-  specialDietaryNeeds: string;
-  dietaryRestrictions: string;
-  message: string;
-  submittedAt: string;
+  phone?: string;
+  attendance: 'yes' | 'no';
+  guest_count: number;
+  special_dietary_needs: boolean;
+  dietary_restrictions?: string;
+  message?: string;
+  submitted_at: string;
 }
 
 interface AdminStatsProps {
@@ -22,7 +22,7 @@ interface AdminStatsProps {
 const AdminStats = ({ rsvpData }: AdminStatsProps) => {
   const attendingGuests = rsvpData.filter(rsvp => rsvp.attendance === "yes");
   const notAttendingGuests = rsvpData.filter(rsvp => rsvp.attendance === "no");
-  const totalGuests = attendingGuests.reduce((sum, rsvp) => sum + parseInt(rsvp.guestCount), 0);
+  const totalGuests = attendingGuests.reduce((sum, rsvp) => sum + rsvp.guest_count, 0);
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">

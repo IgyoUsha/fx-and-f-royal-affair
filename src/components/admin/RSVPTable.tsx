@@ -6,13 +6,13 @@ interface RSVPData {
   id: string;
   name: string;
   email: string;
-  phone: string;
-  attendance: string;
-  guestCount: string;
-  specialDietaryNeeds: string;
-  dietaryRestrictions: string;
-  message: string;
-  submittedAt: string;
+  phone?: string;
+  attendance: 'yes' | 'no';
+  guest_count: number;
+  special_dietary_needs: boolean;
+  dietary_restrictions?: string;
+  message?: string;
+  submitted_at: string;
 }
 
 interface RSVPTableProps {
@@ -45,7 +45,7 @@ const RSVPTable = ({ rsvpData }: RSVPTableProps) => {
                 <TableRow key={rsvp.id}>
                   <TableCell className="font-medium">{rsvp.name}</TableCell>
                   <TableCell>{rsvp.email}</TableCell>
-                  <TableCell>{rsvp.phone}</TableCell>
+                  <TableCell>{rsvp.phone || '-'}</TableCell>
                   <TableCell>
                     <span className={`px-2 py-1 rounded-full text-xs font-medium ${
                       rsvp.attendance === "yes" 
@@ -55,13 +55,13 @@ const RSVPTable = ({ rsvpData }: RSVPTableProps) => {
                       {rsvp.attendance === "yes" ? "Attending" : "Not Attending"}
                     </span>
                   </TableCell>
-                  <TableCell>{rsvp.attendance === "yes" ? rsvp.guestCount : "-"}</TableCell>
+                  <TableCell>{rsvp.attendance === "yes" ? rsvp.guest_count : "-"}</TableCell>
                   <TableCell>
-                    {rsvp.specialDietaryNeeds || rsvp.dietaryRestrictions || "None"}
+                    {rsvp.dietary_restrictions || (rsvp.special_dietary_needs ? "Yes" : "None")}
                   </TableCell>
-                  <TableCell className="max-w-xs truncate">{rsvp.message}</TableCell>
+                  <TableCell className="max-w-xs truncate">{rsvp.message || '-'}</TableCell>
                   <TableCell>
-                    {new Date(rsvp.submittedAt).toLocaleDateString()}
+                    {new Date(rsvp.submitted_at).toLocaleDateString()}
                   </TableCell>
                 </TableRow>
               ))}

@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { useToast } from "@/hooks/use-toast";
 import { Textarea } from "@/components/ui/textarea";
+import { supabase } from "@/integrations/supabase/client";
 
 const RSVP = () => {
   const [formData, setFormData] = useState({
@@ -29,26 +30,50 @@ const RSVP = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 1000));
+    try {
+      const { error } = await supabase
+        .from('rsvp')
+        .insert({
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone || null,
+          attendance: formData.attendance,
+          guest_count: parseInt(formData.guestCount),
+          special_dietary_needs: !!formData.specialDietaryNeeds,
+          dietary_restrictions: formData.dietaryRestrictions || formData.specialDietaryNeeds || null,
+          message: formData.message || null
+        });
 
-    toast({
-      title: "RSVP Submitted!",
-      description: "Thank you for your response. We can't wait to celebrate with you!",
-    });
+      if (error) {
+        throw error;
+      }
 
-    // Reset form
-    setFormData({
-      name: "",
-      email: "",
-      phone: "",
-      attendance: "",
-      guestCount: "1",
-      dietaryRestrictions: "",
-      specialDietaryNeeds: "",
-      message: ""
-    });
-    setIsSubmitting(false);
+      toast({
+        title: "RSVP Submitted!",
+        description: "Thank you for your response. We can't wait to celebrate with you!",
+      });
+
+      // Reset form
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        attendance: "",
+        guestCount: "1",
+        dietaryRestrictions: "",
+        specialDietaryNeeds: "",
+        message: ""
+      });
+    } catch (error) {
+      console.error('Error submitting RSVP:', error);
+      toast({
+        title: "Error",
+        description: "Failed to submit RSVP. Please try again.",
+        variant: "destructive"
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (

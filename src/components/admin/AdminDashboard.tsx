@@ -1,21 +1,23 @@
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { LogOut, Download } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import AdminStats from "./AdminStats";
 import RSVPTable from "./RSVPTable";
+import { supabase } from "@/integrations/supabase/client";
+import { useToast } from "@/hooks/use-toast";
 
 interface RSVPData {
   id: string;
   name: string;
   email: string;
-  phone: string;
-  attendance: string;
-  guestCount: string;
-  specialDietaryNeeds: string;
-  dietaryRestrictions: string;
-  message: string;
-  submittedAt: string;
+  phone?: string;
+  attendance: 'yes' | 'no';
+  guest_count: number;
+  special_dietary_needs: boolean;
+  dietary_restrictions?: string;
+  message?: string;
+  submitted_at: string;
 }
 
 interface AdminDashboardProps {
@@ -23,33 +25,57 @@ interface AdminDashboardProps {
 }
 
 const AdminDashboard = ({ onLogout }: AdminDashboardProps) => {
-  // Mock RSVP data - in a real app, this would come from a database
-  const [rsvpData] = useState<RSVPData[]>([
-    {
-      id: "1",
-      name: "John Doe",
-      email: "john@example.com",
-      phone: "+1234567890",
-      attendance: "yes",
-      guestCount: "2",
-      specialDietaryNeeds: "vegetarian",
-      dietaryRestrictions: "None",
-      message: "So excited for your special day!",
-      submittedAt: "2024-01-15T10:30:00Z"
-    },
-    {
-      id: "2",
-      name: "Jane Smith",
-      email: "jane@example.com",
-      phone: "+1987654321",
-      attendance: "yes",
-      guestCount: "1",
-      specialDietaryNeeds: "",
-      dietaryRestrictions: "Gluten-free",
-      message: "Can't wait to celebrate with you!",
-      submittedAt: "2024-01-16T14:20:00Z"
+  const [rsvpData, setRsvpData] = useState<RSVPData[]>([]);
+  const [loading, setLoading] = useState(true);
+  const { toast } = useToast();
+
+  const fetchRSVPData = async () => {
+    try {
+      const { data, error } = await supabase
+        .from('rsvp')
+        .select('*')
+        .order('submitted_at', { ascending: false });
+
+      if (error) {
+        throw error;
+      }
+
+      setRsvpData(data as RSVPData[] || []);
+    } catch (error) {
+      console.error('Error fetching RSVP data:', error);
+      toast({
+        title: "Error",
+        description: "Failed to load RSVP data",
+        variant: "destructive"
+      });
+    } finally {
+      setLoading(false);
     }
-  ]);
+  };
+
+  useEffect(() => {
+    fetchRSVPData();
+
+    // Set up real-time subscription
+    const channel = supabase
+      .channel('rsvp-changes')
+      .on(
+        'postgres_changes',
+        {
+          event: '*',
+          schema: 'public',
+          table: 'rsvp'
+        },
+        () => {
+          fetchRSVPData();
+        }
+      )
+      .subscribe();
+
+    return () => {
+      supabase.removeChannel(channel);
+    };
+  }, []);
 
   const exportToCSV = () => {
     const headers = ["Name", "Email", "Phone", "Attendance", "Guest Count", "Dietary Needs", "Restrictions", "Message", "Submitted At"];
@@ -58,13 +84,13 @@ const AdminDashboard = ({ onLogout }: AdminDashboardProps) => {
       ...rsvpData.map(rsvp => [
         rsvp.name,
         rsvp.email,
-        rsvp.phone,
+        rsvp.phone || '',
         rsvp.attendance,
-        rsvp.guestCount,
-        rsvp.specialDietaryNeeds,
-        rsvp.dietaryRestrictions,
-        `"${rsvp.message}"`,
-        new Date(rsvp.submittedAt).toLocaleDateString()
+        rsvp.guest_count,
+        rsvp.special_dietary_needs ? 'Yes' : 'No',
+        rsvp.dietary_restrictions || '',
+        `"${rsvp.message || ''}"`,
+        new Date(rsvp.submitted_at).toLocaleDateString()
       ].join(","))
     ].join("\n");
 
@@ -108,11 +134,19 @@ const AdminDashboard = ({ onLogout }: AdminDashboardProps) => {
           </div>
         </div>
 
-        {/* Stats Cards */}
-        <AdminStats rsvpData={rsvpData} />
+        {loading ? (
+          <div className="text-center py-8">
+            <p className="text-gray-600">Loading RSVP data...</p>
+          </div>
+        ) : (
+          <>
+            {/* Stats Cards */}
+            <AdminStats rsvpData={rsvpData} />
 
-        {/* RSVP Table */}
-        <RSVPTable rsvpData={rsvpData} />
+            {/* RSVP Table */}
+            <RSVPTable rsvpData={rsvpData} />
+          </>
+        )}
       </div>
     </div>
   );
