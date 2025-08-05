@@ -121,7 +121,7 @@ const OurStory = () => {
                     In 2020, I was handed over to Fater along with a few of my mates, and we began a discipleship journey. Fater became a big brother to me, and since I don't have a biological brother, I often called him my "best brother." There was a time we had a relationship session during one of our discipleship meetings and we each had to write a letter to our future spouses.
                   </p>
                   <p>
-                    Fater visited Saint Petersburg before he left the country, intending to tour the city. I took him to surprise them and became a tour guide in the city. When he was about to leave the country, I went to see him off because he had promised to give me some books when leaving.
+                    Fater visited Saint Petersburg before he left the country, intending to tour the city and see some of his CACAF friends. I took him to surprise them and became a tour guide in the city. When he was about to leave the country, I went to see him off because he had promised to give me some books when leaving.
                   </p>
                   <p>
                     During our discipleship meetings, Fater always advised us as ladies to begin praying for our marriages, but I was quite reluctant about it. I got my first proposal in May 2023, which jolted me into the reality that I had entered into a phase of being noticed by boys and the matter of praying to know the will of God concerning marriage had become inevitable.
